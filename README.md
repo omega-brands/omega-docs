@@ -18,7 +18,7 @@ To make delegation, automation, and agentic execution safe, explainable, and def
 
 ## The Classification Shift: From Orchestration to Governed Execution
 
-OMEGA treats execution as something that must be provable, reconstructable, and constrained by design. [See the full analysis](docs/atlas/final-additions-summary.md)
+OMEGA treats execution as something that must be provable, reconstructable, and constrained by design. [See the full analysis](docs/overview/classification-shift.md)
 
 ---
 
@@ -129,4 +129,5 @@ Every execution produces a deterministic receipt. Here's a concrete example:
   "meta": { "source": "gmail", "fromDomain": "recruiterco.com", "reasonCodes": ["stack_mismatch"] }
 }
 ```
+
 
