@@ -1,155 +1,132 @@
-# OMEGA — Sovereign Agentic Infrastructure
+# OMEGA
 
-OMEGA is a standardized framework for the deployment of autonomous agentic workflows within high-compliance enterprise environments. It provides a deterministic orchestration layer designed to solve the "Black Box" problem in Large Language Model (LLM) implementations.
-
----
-
-## Enterprise Core Pillars
-
-### 1. Atomic Attribution
-
-Every action, inference, and computational spend is wrapped in a **Transaction Envelope (TE)**, providing a cryptographic chain of custody from the human Principal ID to the final output.
-
-### 2. Financial Guardrails
-
-OMEGA implements a **Non-Deterministic Ceiling (NDC)**. Automated workflows are physically incapable of exceeding pre-authorized compute budgets without Level-4 Human-in-the-Loop (HITL) overrides.
-
-### 3. Hardware-Attested Security
-
-Designed for SOC2 Type II and HIPAA compliance, OMEGA supports deployment within **Trusted Execution Environments (TEEs)** using AMD SEV-SNP and NVIDIA Confidential Computing.
+> **OMEGA (Orchestrated Multi-Expert Governed Agents)** is a governed execution platform for coordinating generative, deterministic, and policy-driven agents with built-in proof, privacy, and failure semantics.
 
 ---
 
-## System Architecture
+## What OMEGA Is
 
-The OMEGA OS is partitioned into distinct layers to ensure stability and separation of concerns:
-
-| Layer | Name | Purpose |
-|-------|------|---------|
-| **L1** | Governance & SOPs | The Rule of Law — contracts, attribution, compliance |
-| **L2** | Logic & Orchestration | The Engine — routing, planning, coordination |
-| **L3** | Agentic Execution | The Workforce — agents, tools, services |
-
-```mermaid
-flowchart LR
-  subgraph L1[Governance Layer]
-    ATTR[Attribution Ledger]
-    BUDGET[Financial Guardrails]
-    AUDIT[Audit Protocol]
-  end
-
-  subgraph L2[Orchestration Layer]
-    FED[Federation Core]
-    ROUTER[Router Sanctuary]
-    PLANS[Plan Auditor]
-  end
-
-  subgraph L3[Execution Layer]
-    AGENTS[Agent Fleet]
-    TOOLS[Tool Arsenal]
-    TITANS[Titan Council]
-  end
-
-  L1 --> L2
-  L2 --> L3
-  L3 -->|Attribution| L1
-```
-
-For technical specifications, see the [overview documentation](./docs/overview/what-is-omega.md).
+A production-grade execution substrate for orchestrating multiple classes of agents across tools, workflows, and environments. [Learn more](docs/overview/what-is-omega.md)
 
 ---
 
-## Component Classification
+## Why OMEGA Exists
 
-Every component in OMEGA is one of three types. No hybrids.
-
-| Type | Purpose | Characteristics |
-|------|---------|-----------------|
-| **Agent** | Cognitive processing | Stateful, reasons, collaborates |
-| **Tool** | Deterministic execution | Stateless, single action, MCP-compliant |
-| **Service** | Infrastructure | Singleton, containerized, focused responsibility |
+To make delegation, automation, and agentic execution safe, explainable, and defensible by default. [Read the core concepts](docs/overview/core-concepts.md)
 
 ---
 
-## Compliance & Audit
+## The Classification Shift: From Orchestration to Governed Execution
 
-OMEGA is built on the principle of **"Verify, Don't Trust."**
-
-- Every system state is hash-verified
-- All logs are tamper-evident and immutable
-- Full transaction lineage from human to output
-- Hardware attestation for sensitive workloads
-
-### Supported Compliance Frameworks
-
-| Framework | Coverage |
-|-----------|----------|
-| SOC 2 Type II | Access control, audit trails, encryption |
-| HIPAA | PHI protection, transmission security |
-| PCI DSS | Cardholder data encryption |
-| GDPR | Data subject attribution, right to deletion |
+OMEGA treats execution as something that must be provable, reconstructable, and constrained by design. [See the full analysis](docs/atlas/final-additions-summary.md)
 
 ---
 
-## Capabilities
+## Core Capabilities (High-Level)
 
-- **Hybrid Orchestration:** MCP tools for precision. A2A dialogue for strategy.
-- **Agentic SDLC:** Self-healing pipelines, telemetry feedback loops, adaptive routing.
-- **Context Engine:** Retrieval, memory, and policy-guarded grounding.
-- **Observability:** End-to-end traces, cost/latency dashboards, drift alerts.
-- **Genesis Protocol:** Controlled capability gap-filling through dynamic tool spawning.
-- **Self-Improvement:** Tool and strategy evolution with audit and rollback.
-- **POML Workflows:** Declarative agent workflows as code.
+Routing, execution, memory, workflow coordination, extensibility, and agent collaboration as first-class primitives. [Explore capabilities](docs/atlas/capabilities-index.md)
+
+---
+
+## Receipts as a First-Class Primitive
+
+Every execution can emit a deterministic receipt that proves what happened without exposing content. [Understand receipts](docs/atlas/functionality-summary.md)
+
+---
+
+## Privacy by Construction
+
+Privacy is enforced structurally through schema, hashing, and policy boundaries rather than convention. [Best practices](docs/architecture/security/best-practices.md)
+
+---
+
+## Determinism, Replayability, and Proof Semantics
+
+Same inputs produce the same proofs, enabling replay, verification, and auditability. [Proof semantics](docs/architecture/security/fortress.md)
+
+---
+
+## Where Keon Fits (Optional Governance Substrate)
+
+Keon provides cryptographic governance and audit guarantees for OMEGA’s execution layer without changing its execution model. [Architecture overview](docs/architecture/overview.md)
+
+---
+
+## What This Unlocks
+
+Once execution is provable, downstream systems become inevitable rather than aspirational. [See deliverables](docs/atlas/deliverables.md)
+
+---
+
+## Architecture at a Glance
+
+A modular system composed of agents, execution engines, routing layers, memory systems, and optional governance substrates. [Full architecture](docs/architecture/overview.md)
 
 ---
 
 ## Getting Started
 
-```bash
-# Clone
-git clone https://github.com/m0r6aN/omega-docs.git
-cd omega-docs
-
-# Review the overview
-cat docs/overview/what-is-omega.md
-
-# Explore documentation
-ls docs/
-```
+OMEGA can be adopted incrementally, from local execution to governed multi-tenant workflows. [Quick start guide](docs/getting-started/quick-start.md)
 
 ---
 
-## For Enterprises
+## Explore the Full Surface Area
 
-| Concern | OMEGA Solution |
-|---------|----------------|
-| "How do I know what the AI spent?" | Transaction Envelope with full attribution |
-| "Can it exceed our budget?" | Non-Deterministic Ceiling + HITL gates |
-| "Is it compliant?" | TEE deployment, SOC2/HIPAA ready |
-| "Can we audit it?" | Immutable Chronicle, hash-chained logs |
-
-### Engagement Options
-
-- **Guided Demo** — Your use case, our platform
-- **Architecture Review** — Under NDA
-- **Pilot Program** — Scoped to your success metrics
+Detailed documentation covering the complete capability set, advanced systems, and deliverables. [Complete documentation](docs/atlas/documentation-complete.md)
 
 ---
 
-## Repository Structure
+## Design Principles
 
-```
-omega-docs/
-├── docs/               # Documentation content
-├── assets/             # Images, diagrams, and media
-├── examples/           # Public examples and tutorials
-├── .gitignore          # Git ignore rules
-└── LICENSE             # License information
-```
+Restraint, clarity, credibility, and correctness over novelty and unchecked autonomy. [Advanced systems reference](docs/atlas/advanced-systems-reference.md)
 
 ---
 
-## License & Contact
+## Status and Maturity
 
-- **License:** Business-friendly for public assets. Commercial license for core.
-- **Contact:** [clint.morgan@morganfindings.com](mailto:clint.morgan@morganfindings.com)
+An actively developed, production-tested system with real operational use cases. [Documentation status](docs/atlas/documentation-complete.md)
+
+---
+
+## Roadmap Signal (High-Level)
+
+Focused on deepening proof semantics, federation flexibility, and system evolvability. [Roadmap details](docs/atlas/final-additions-summary.md)
+
+---
+
+## Who This Is For
+
+Teams building systems where correctness, explainability, and control matter. [Start here](docs/atlas/start-here.md)
+
+---
+
+## Who This Is Not For
+
+Toy agents, prompt demos, or systems optimized solely for novelty.
+
+---
+
+## Contributing and Collaboration
+
+Built to be extended, audited, and evolved through disciplined collaboration.
+
+---
+
+## Receipts
+
+Every execution produces a deterministic receipt. Here's a concrete example:
+
+```json
+{
+  "event": "email.action.executed",
+  "workflowId": "wf_personal_signal_firewall",
+  "stepId": "act.reply_decline",
+  "status": "success",
+  "correlationId": "corr_...",
+  "inputHash": "sha256:...",
+  "outputHash": "sha256:...",
+  "receiptHash": "sha256:...",
+  "meta": { "source": "gmail", "fromDomain": "recruiterco.com", "reasonCodes": ["stack_mismatch"] }
+}
+```
+
