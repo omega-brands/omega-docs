@@ -1,0 +1,165 @@
+policy:
+  id: "policy.docs-governance-tone"
+  version: "1.0.0"
+  description: "Governance tone audit for public documentation"
+  tier: "strict"
+  
+  # Documentation is public claims; fail-closed
+  allowed_actions: ["observe", "draft", "classify"]
+  denied_actions: ["publish", "modify_source"]
+  
+  rules:
+    - id: "disclosure_required"
+      description: "All findings must include governance framing"
+      severity: "MUST"
+      enforcement: "semantic"
+      target: "all_findings"
+      action: "allow_with_mitigation"
+      parameters:
+        disclosure_template: "[Governance audit finding: This content analysis was performed by an autonomous scanning agent. Human review required before any changes.]"
+    
+    - id: "no_ungoverned_autonomy_claims"
+      description: "Flag claims of unbounded autonomy or self-direction"
+      severity: "MUST"
+      enforcement: "regex_scan"
+      target: "all_text"
+      action: "flag_if_detected"
+      parameters:
+        patterns:
+          - "\\b(autonomous|self-evolving?|self-improving?|self-directed)\\b"
+          - "\\bwithout human (assistance|intervention|review)"
+          - "\\bno manual intervention"
+          - "\\bevolves? indefinitely"
+          - "\\b(digital organisms?|living systems?|artificial life)"
+        severity_level: "P0"
+        context: "Implies unbounded autonomy without governance"
+    
+    - id: "no_orchestration_as_trust"
+      description: "Flag claims that orchestration alone provides safety"
+      severity: "MUST"
+      enforcement: "semantic"
+      target: "all_text"
+      action: "flag_if_detected"
+      parameters:
+        keywords:
+          - "orchestrat.*ensures safety"
+          - "execution.*guarantees correctness"
+          - "automat.*provides trust"
+          - "distributed.*without governance"
+        severity_level: "P0"
+        context: "Implies safety without explicit governance primitives"
+    
+    - id: "omission_drift_detection"
+      description: "Flag decision/execution/publishing text missing governance primitives"
+      severity: "MUST"
+      enforcement: "semantic"
+      target: "all_sections"
+      action: "flag_if_detected"
+      parameters:
+        trigger_keywords:
+          - "decision"
+          - "execution"
+          - "publish"
+          - "invoke"
+          - "tool"
+          - "federation"
+          - "workflow"
+          - "orchestrat"
+        required_governance_keywords:
+          - "policy"
+          - "governance"
+          - "receipt"
+          - "audit"
+          - "verify"
+          - "fail-closed"
+          - "deterministic"
+        severity_level: "P1"
+        context: "Describes execution/decisions without mentioning governance verification"
+    
+    - id: "anthropomorphic_framing_without_context"
+      description: "Flag organism/civilization metaphors without governance framing"
+      severity: "SHOULD"
+      enforcement: "semantic"
+      target: "all_text"
+      action: "flag_if_detected"
+      parameters:
+        patterns:
+          - "\\bagent[s]?\\s+(think|decide|evolve|spawn)"
+          - "\\bdigital (organism|entity|creature|being)"
+          - "\\b(civilization|ecosystem|organism)"
+        requires_context: ["governed", "policy", "receipt", "audit", "bounded"]
+        severity_level: "P1"
+        context: "Strong anthropomorphic framing should be explicit about governance"
+    
+    - id: "vocabulary_canon_alignment"
+      description: "Suggest preferred vocabulary for governance concepts"
+      severity: "SHOULD"
+      enforcement: "regex_scan"
+      target: "all_text"
+      action: "suggest_replacement"
+      parameters:
+        replacements:
+          - old_phrase: "autonomous agent"
+            new_phrase: "policy-governed agent"
+            context: "Emphasizes boundaries over autonomy"
+          
+          - old_phrase: "self-evolving"
+            new_phrase: "parameterized evolution via versioned policies"
+            context: "Explicit governance"
+          
+          - old_phrase: "automated execution"
+            new_phrase: "deterministic, receipted execution"
+            context: "Auditable behavior"
+          
+          - old_phrase: "orchestrated"
+            new_phrase: "orchestrated and verified with evidence packs"
+            context: "Verification built-in"
+          
+          - old_phrase: "distributed system"
+            new_phrase: "distributed governance system with deterministic receipts"
+            context: "Highlights verification capability"
+          
+          - old_phrase: "intelligent"
+            new_phrase: "governed and verifiable"
+            context: "Reframes capability as bounded + auditable"
+        severity_level: "P2"
+        context: "Tone polish for governance paradigm"
+    
+    - id: "no_pii_in_findings"
+      description: "Screen findings for any PII"
+      severity: "MUST"
+      enforcement: "regex_scan"
+      target: "all_output"
+      action: "deny_if_detected"
+      parameters:
+        patterns:
+          - "\\b[A-Z0-9._%+-]+@[A-Z0-9.-]+\\.[A-Z]{2,}\\b"  # Email
+          - "\\b\\d{3}-\\d{3}-\\d{4}\\b"  # Phone
+    
+    - id: "citation_required_for_claims"
+      description: "Any governance/policy claims must cite PPP docs or OMEGA doctrine"
+      severity: "MUST"
+      enforcement: "semantic"
+      target: "finding_text"
+      action: "require_citation_or_uncertain"
+      parameters:
+        detection_keywords:
+          - "policy"
+          - "governance"
+          - "audit"
+          - "receipt"
+          - "deterministic"
+        required_citation_format: "[source: docs/atlas/ppp/*, OMEGA Doctrine]"
+  
+  # Logging
+  logging:
+    log_all_rules: true
+    log_all_decisions: true
+    emit_receipt_for_flag: true
+    emit_receipt_for_suggestion: true
+  
+  # Compliance
+  compliance:
+    fail_on_ambiguity: true
+    draft_only: true
+    live_posting_enabled: false

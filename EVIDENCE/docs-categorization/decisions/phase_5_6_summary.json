@@ -1,0 +1,23 @@
+{
+  "workflow_id": "wf-docs-categorization-2026-02-04T18-42-31_165192",
+  "phase": "5_6_complete",
+  "execution_timestamp": "2026-02-04T19:42:02.954195",
+  "authority": "User",
+  "directive_summary": {
+    "total_directives": 13,
+    "approved": 11,
+    "rejected": 2,
+    "total_files_decided": 623
+  },
+  "decision_summary": {
+    "accepting": 478,
+    "modifying": 84,
+    "rejecting": 61,
+    "deny_overrides": 2
+  },
+  "evidence_files": {
+    "drift_report": "drift_report_2026-02-04T13-42-32.json",
+    "directive_receipts": "decisions/directive_receipts.json",
+    "file_decisions": "decisions/file_decisions.jsonl"
+  }
+}

@@ -1,0 +1,103 @@
+{
+  "sealed_timestamp": "2026-02-04T19:50:10.756948",
+  "authority": "User",
+  "workflow_id": "wf-docs-categorization-2026-02-04T18-42-31_165192",
+  "file_hashes": {
+    "drift_report_2026-02-04T13-42-32.json": "60dbecb9040c02cc5ecf04f0aacf286efdc3070f9e8a44d67213f6e83937467e",
+    "decisions/directive_receipts.json": "d4bcbf82101e030f33d46cd03a2580182657c6b00e4041b315ba5c7858b7bf39",
+    "decisions/file_decisions.jsonl": "adc0a60d8df42eff35ba6938156da10c10f2b0725868515d43600ff60c98be29",
+    "decisions/movement_audit_log.jsonl": "293366217b9f4091e89c4624702bf69a6f91b7adf0225b1a23091475df0ffab9",
+    "reclassification_report_2026-02-04T14-49-31.json": "4bf3906fd80855bdf99e58f026d0146ea72498d5cce7ccfcee83d836c427e1cc",
+    "FINAL_EVIDENCE_SUMMARY.json": "97dc2bcbadc9f8e0410b07eca62617ce5dba6fcece73e42631f85236d8e48f6d"
+  },
+  "evidence_summary": {
+    "workflow_id": "wf-docs-categorization-2026-02-04T18-42-31_165192",
+    "completion_timestamp": "2026-02-04T19:50:10.744273",
+    "authority": "User",
+    "phases_executed": [
+      "1-collect",
+      "2-classify",
+      "3-policy_evaluate",
+      "4-drift_report",
+      "5-decision_gate",
+      "6-movements",
+      "6-verification"
+    ],
+    "pre_move_classification": {
+      "allow": 140,
+      "mitigate": 621,
+      "deny": 2,
+      "total": 763
+    },
+    "human_directives": {
+      "total": 13,
+      "approved": 11,
+      "rejected": 2,
+      "files_covered": 623
+    },
+    "file_movements_executed": {
+      "successful": 469,
+      "failed": 0,
+      "directives_executed": [
+        "A",
+        "B",
+        "E",
+        "F",
+        "I",
+        "J",
+        "DENIAL-2"
+      ]
+    },
+    "post_move_verification": {
+      "allow": 607,
+      "mitigate": 157,
+      "deny": 2,
+      "total": 766,
+      "allow_improvement": 467
+    },
+    "remediation_pending": {
+      "directives": [
+        "C",
+        "G",
+        "K"
+      ],
+      "files": 84,
+      "status": "flagged_for_separate_workflow"
+    },
+    "directives_not_executed": {
+      "rejected_D": {
+        "files": 55,
+        "reason": "No movement authorized",
+        "status": "stayed_in_place"
+      },
+      "rejected_H": {
+        "files": 6,
+        "reason": "No movement authorized",
+        "status": "stayed_in_place"
+      }
+    },
+    "evidence_files": {
+      "pre_move_classification": "drift_report_2026-02-04T13-42-32.json",
+      "human_directives": "decisions/directive_receipts.json",
+      "file_movements": "decisions/movement_audit_log.jsonl",
+      "post_move_verification": "reclassification_report_2026-02-04T14-49-31.json",
+      "remediation_manifest": "REMEDIATION_TASK_MANIFEST.md",
+      "commit_instructions": "decisions/commit_instructions.json"
+    },
+    "governance_principles": [
+      "Human authority is non-delegable",
+      "All decisions immutable (hashed, receipted)",
+      "No silent changes (explicit directives required)",
+      "Policy compliance enforced (fail-closed)",
+      "Complete audit trail (all phases documented)",
+      "No public promotions without explicit workflows"
+    ]
+  },
+  "verification_instructions": [
+    "1. Download all files from EVIDENCE/docs-categorization/",
+    "2. Compute SHA256 hash for each file",
+    "3. Compare against file_hashes in this manifest",
+    "4. All hashes must match to verify evidence integrity",
+    "5. Review FINAL_EVIDENCE_SUMMARY.json for complete audit trail"
+  ]
+}

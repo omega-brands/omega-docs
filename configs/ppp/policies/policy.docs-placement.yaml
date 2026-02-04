@@ -1,0 +1,356 @@
+policy:
+  id: docs-placement-policy
+  version: 1.0.0
+  status: canonical
+  scope: markdown_documentation
+  enforcement_mode: fail_closed
+
+metadata:
+  description: >
+    Governs categorization, placement, linkage, and promotion of documentation
+    across OMEGA and Keon repositories. Placement is treated as a governance
+    decision because it affects meaning, authority, and public claims.
+
+  applies_to:
+    - omega-docs
+    - omega-docs-internal
+    - keon-docs
+    - keon-docs-internal
+
+  decision_authority:
+    default: kernel
+    classification: policy
+    remediation: human_required
+
+repositories:
+  omega-docs:
+    visibility: public
+    purpose: >
+      Public-facing documentation describing OMEGA concepts, architecture,
+      and execution behavior without asserting governance guarantees.
+
+    allowed_content:
+      audience: public
+      claim_types:
+        - descriptive
+        - architectural_high_level
+        - operational_guide
+      forbidden_content:
+        - draft
+        - governance_definitions
+        - internal_notes
+        - experimental
+
+    linkage:
+      may_link_to:
+        - keon-docs
+      may_not_link_to:
+        - omega-docs-internal
+        - keon-docs-internal
+
+  omega-docs-internal:
+    visibility: internal
+    purpose: >
+      Internal documentation for OMEGA design, experimentation, workflows,
+      and agent behavior.
+
+    allowed_content:
+      audience: internal
+      claim_types:
+        - descriptive
+        - experimental
+        - draft
+        - operational_runbook
+        - contract_spec
+        - governance_internal
+      forbidden_content:
+        - public_claims
+        - unvetted_guarantees
+
+    linkage:
+      may_link_to:
+        - omega-docs
+        - omega-docs-internal
+        - keon-docs-internal
+      may_not_link_to: []
+
+  keon-docs:
+    visibility: public
+    purpose: >
+      Public-facing documentation defining Keon as a governance substrate,
+      including kernel guarantees, policy semantics, and evidence models.
+
+    allowed_content:
+      audience: public
+      claim_types:
+        - governance_definition
+        - kernel_primitive
+        - guarantees
+        - verified_capabilities
+        - whitepaper
+      forbidden_content:
+        - draft
+        - experimental
+        - unvetted_claims
+
+    evidence_required_for:
+      - guarantees
+      - trust_claims
+      - compliance_claims
+
+    linkage:
+      may_link_to:
+        - omega-docs
+        - keon-docs
+      may_not_link_to:
+        - omega-docs-internal
+        - keon-docs-internal
+
+  keon-docs-internal:
+    visibility: internal
+    purpose: >
+      Internal documentation for governance evolution, kernel design,
+      policy drafts, workflows, and evidence under review.
+
+    allowed_content:
+      audience: internal
+      claim_types:
+        - draft
+        - experimental
+        - policy_development
+        - workflow_spec
+        - adr
+        - postmortem
+        - evidence_under_review
+      forbidden_content:
+        - public_guarantees
+        - unvetted_claims
+
+    linkage:
+      may_link_to:
+        - keon-docs-internal
+        - omega-docs-internal
+      may_not_link_to:
+        - omega-docs
+        - keon-docs
+
+classification_rules:
+  audience_detection:
+    public_indicators:
+      - "overview"
+      - "introduction"
+      - "what is"
+      - "architecture"
+      - "getting-started"
+      - "quickstart"
+      - "quick start"
+      - "user guide"
+      - "public"
+
+    internal_indicators:
+      - "draft"
+      - "notes"
+      - "wip"
+      - "internal"
+      - "experiment"
+      - "experimental"
+      - "archive"
+      - "99-internal"
+      - "runbook"
+      - "sop"
+      - "postmortem"
+
+  claim_detection:
+    governance_claims:
+      keywords:
+        - "governance"
+        - "policy"
+        - "receipt"
+        - "evidence pack"
+        - "evidence-pack"
+        - "verification"
+        - "audit"
+        - "deterministic"
+        - "fail-closed"
+        - "kernel"
+        - "primitive"
+
+    guarantee_claims:
+      keywords:
+        - "guarantee"
+        - "guarantees"
+        - "ensures"
+        - "prevents"
+        - "enforces"
+        - "trust"
+        - "secure"
+        - "safety"
+        - "immutable"
+        - "atomic"
+
+    experimental_claims:
+      keywords:
+        - "experiment"
+        - "experimental"
+        - "exploration"
+        - "prototype"
+        - "draft"
+        - "proposal"
+        - "wip"
+        - "work in progress"
+
+    whitepaper_claims:
+      keywords:
+        - "whitepaper"
+        - "white paper"
+        - "design document"
+        - "specification"
+        - "canonical"
+
+placement_rules:
+  - id: forbid_drafts_in_public
+    description: >
+      Draft or experimental content must not exist in public repos.
+    if:
+      repo_visibility: public
+      claim_type: [draft, experimental]
+    then:
+      decision: DENY
+      violation: "draft_or_experimental_in_public"
+      remediation: "move_to_internal_repo"
+
+  - id: governance_claims_only_in_keon
+    description: >
+      Governance definitions and kernel primitives must live under keon-docs
+      (public) or keon-docs-internal (internal).
+    if:
+      claim_type: [governance_definition, kernel_primitive]
+      repo: [omega-docs, omega-docs-internal]
+    then:
+      decision: MITIGATE
+      violation: "governance_claim_in_omega"
+      remediation: "move_to_keon_docs_or_keon_docs_internal"
+
+  - id: guarantees_require_evidence
+    description: >
+      Public guarantees (in keon-docs) must have associated evidence pack.
+    if:
+      repo: keon-docs
+      claim_type: guarantees
+      evidence_attached: false
+    then:
+      decision: MITIGATE
+      violation: "guarantee_without_evidence"
+      remediation: "attach_evidence_pack_or_demote_to_internal"
+
+  - id: internal_first_rule
+    description: >
+      Content must exist internally (or in internal variant) before being public.
+      All public docs should have corresponding internal working documents.
+    if:
+      repo_visibility: public
+      internal_variant_exists: false
+    then:
+      decision: MITIGATE
+      violation: "no_internal_predecessor"
+      remediation: "create_internal_variant_or_review_necessity"
+
+  - id: linkage_public_to_internal_forbidden
+    description: >
+      Public repos must not link to internal repos.
+    if:
+      source_repo_visibility: public
+      target_repo_visibility: internal
+    then:
+      decision: DENY
+      violation: "public_to_internal_link"
+      remediation: "remove_link_or_move_to_public"
+
+  - id: linkage_internal_to_public_allowed
+    description: >
+      Internal repos may link to public repos (one-way dependency).
+    if:
+      source_repo_visibility: internal
+      target_repo_visibility: public
+    then:
+      decision: ALLOW
+      rationale: "internal_can_reference_public"
+
+linkage_rules:
+  directions:
+    public_to_internal: forbidden
+    internal_to_public: allowed
+    internal_to_internal: allowed
+    public_to_public: allowed
+
+  cross_repo_linkage:
+    omega_docs_to_keon_docs: allowed
+    omega_docs_to_keon_docs_internal: forbidden
+    omega_docs_internal_to_keon_docs: allowed
+    omega_docs_internal_to_keon_docs_internal: allowed
+    keon_docs_to_omega_docs: allowed
+    keon_docs_to_omega_docs_internal: forbidden
+    keon_docs_internal_to_omega_docs: allowed
+    keon_docs_internal_to_omega_docs_internal: allowed
+
+drift_conditions:
+  - misplaced_content
+  - unverified_public_claim
+  - duplicate_authority
+  - forbidden_linkage
+  - governance_claim_in_wrong_repo
+  - draft_in_public
+
+decisions:
+  ALLOW:
+    description: >
+      Document placement and content comply with policy. No action required.
+    action: none
+
+  MITIGATE:
+    description: >
+      Document is eligible but requires review or adjustment. Policy detected
+      a condition that should be verified or corrected.
+    action: human_review_suggested
+
+  DENY:
+    description: >
+      Document placement or content violates policy. Remediation required.
+    action: human_decision_required
+
+receipts:
+  required_fields:
+    - document_id
+    - source_repo
+    - source_path
+    - detected_audience
+    - detected_claims
+    - target_repo
+    - policy_decision
+    - violated_rules
+    - policy_id
+    - policy_version
+    - timestamp
+    - receipt_hash
+
+default_behavior:
+  on_ambiguity: DENY
+  on_missing_metadata: DENY
+  on_policy_error: DENY
+  on_no_repo_match: DENY
+
+fail_closed: true
+
+doctrine:
+  placement_statement: >
+    Meaning follows placement. Placement follows governance.
+    Documentation is governed with the same rigor as execution.
+
+  kernel_primacy: >
+    This policy establishes a kernel-level primitive for documentation
+    governance. PPP is the implementation; kernel semantics are precedent.
+
+  decision_authority: >
+    Classification is policy-driven (kernel decides).
+    Remediation is human-gated (human authority required).
+    No document moves without explicit human approval.

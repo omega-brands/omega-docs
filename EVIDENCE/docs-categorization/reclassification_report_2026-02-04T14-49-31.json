@@ -1,0 +1,1151 @@
+{
+  "workflow_id": "wf-docs-categorization-2026-02-04T19-49-30_493646",
+  "mode": "audit_only",
+  "phases": {
+    "collect": {
+      "phase": "collect",
+      "files_found": 766,
+      "repos_scanned": 4,
+      "timestamp": "2026-02-04T19:49:31.019350"
+    },
+    "classify": {
+      "phase": "classify",
+      "documents_classified": 766,
+      "timestamp": "2026-02-04T19:49:31.233418"
+    },
+    "policy_evaluate": {
+      "phase": "policy_evaluate",
+      "documents_evaluated": 766,
+      "allow": 607,
+      "mitigate": 157,
+      "deny": 2,
+      "timestamp": "2026-02-04T19:49:31.275708"
+    },
+    "drift_report": {
+      "phase": "drift_report",
+      "total_documents": 766,
+      "allow_count": 607,
+      "mitigate_count": 157,
+      "deny_count": 2,
+      "mitigations": [
+        {
+          "document_id": "omega-docs/DRIFT_REPORT_SUMMARY.md",
+          "source_repo": "omega-docs",
+          "target_repo": "keon-docs-internal",
+          "reason": "Governance definitions belong in Keon repos",
+          "suggested_action": "move_to_keon_docs_or_keon_docs_internal"
+        },
+        {
+          "document_id": "omega-docs/HUMAN_DECISION_DIRECTIVES_PROPOSAL.md",
+          "source_repo": "omega-docs",
+          "target_repo": "keon-docs-internal",
+          "reason": "Governance definitions belong in Keon repos",
+          "suggested_action": "move_to_keon_docs_or_keon_docs_internal"
+        },
+        {
+          "document_id": "omega-docs/PHASE_5_6_EXECUTION_REPORT.md",
+          "source_repo": "omega-docs",
+          "target_repo": "keon-docs-internal",
+          "reason": "Governance definitions belong in Keon repos",
+          "suggested_action": "move_to_keon_docs_or_keon_docs_internal"
+        },
+        {
+          "document_id": "omega-docs/README.md",
+          "source_repo": "omega-docs",
+          "target_repo": "keon-docs",
+          "reason": "Guarantee claims must have associated evidence pack",
+          "suggested_action": "attach_evidence_pack_or_demote_to_internal"
+        },
+        {
+          "document_id": "omega-docs/REMEDIATION_TASK_MANIFEST.md",
+          "source_repo": "omega-docs",
+          "target_repo": "keon-docs-internal",
+          "reason": "Governance definitions belong in Keon repos",
+          "suggested_action": "move_to_keon_docs_or_keon_docs_internal"
+        },
+        {
+          "document_id": "omega-docs/docs\\landing.md",
+          "source_repo": "omega-docs",
+          "target_repo": "keon-docs",
+          "reason": "Guarantee claims must have associated evidence pack",
+          "suggested_action": "attach_evidence_pack_or_demote_to_internal"
+        },
+        {
+          "document_id": "omega-docs/INTERFACE\\remediation_decisions.md",
+          "source_repo": "omega-docs",
+          "target_repo": "keon-docs",
+          "reason": "Governance definitions belong in Keon repos",
+          "suggested_action": "move_to_keon_docs_or_keon_docs_internal"
+        },
+        {
+          "document_id": "omega-docs/docs\\architecture\\overview.md",
+          "source_repo": "omega-docs",
+          "target_repo": "keon-docs",
+          "reason": "Governance definitions belong in Keon repos",
+          "suggested_action": "move_to_keon_docs_or_keon_docs_internal"
+        },
+        {
+          "document_id": "omega-docs/docs\\atlas\\documentation-complete.md",
+          "source_repo": "omega-docs",
+          "target_repo": "keon-docs",
+          "reason": "Guarantee claims must have associated evidence pack",
+          "suggested_action": "attach_evidence_pack_or_demote_to_internal"
+        },
+        {
+          "document_id": "omega-docs/docs\\atlas\\start-here.md",
+          "source_repo": "omega-docs",
+          "target_repo": "keon-docs",
+          "reason": "Governance definitions belong in Keon repos",
+          "suggested_action": "move_to_keon_docs_or_keon_docs_internal"
+        },
+        {
+          "document_id": "omega-docs/docs\\governance\\keon-integration.md",
+          "source_repo": "omega-docs",
+          "target_repo": "keon-docs",
+          "reason": "Governance definitions belong in Keon repos",
+          "suggested_action": "move_to_keon_docs_or_keon_docs_internal"
+        },
+        {
+          "document_id": "omega-docs/docs\\overview\\capabilities.md",
+          "source_repo": "omega-docs",
+          "target_repo": "keon-docs",
+          "reason": "Governance definitions belong in Keon repos",
+          "suggested_action": "move_to_keon_docs_or_keon_docs_internal"
+        },
+        {
+          "document_id": "omega-docs/docs\\overview\\core-concepts.md",
+          "source_repo": "omega-docs",
+          "target_repo": "keon-docs",
+          "reason": "Guarantee claims must have associated evidence pack",
+          "suggested_action": "attach_evidence_pack_or_demote_to_internal"
+        },
+        {
+          "document_id": "omega-docs/docs\\overview\\for-whom.md",
+          "source_repo": "omega-docs",
+          "target_repo": "keon-docs",
+          "reason": "Guarantee claims must have associated evidence pack",
+          "suggested_action": "attach_evidence_pack_or_demote_to_internal"
+        },
+        {
+          "document_id": "omega-docs/docs\\overview\\receipts.md",
+          "source_repo": "omega-docs",
+          "target_repo": "keon-docs",
+          "reason": "Guarantee claims must have associated evidence pack",
+          "suggested_action": "attach_evidence_pack_or_demote_to_internal"
+        },
+        {
+          "document_id": "omega-docs/docs\\overview\\what-is-omega.md",
+          "source_repo": "omega-docs",
+          "target_repo": "keon-docs",
+          "reason": "Governance definitions belong in Keon repos",
+          "suggested_action": "move_to_keon_docs_or_keon_docs_internal"
+        },
+        {
+          "document_id": "omega-docs/docs\\architecture\\security\\best-practices.md",
+          "source_repo": "omega-docs",
+          "target_repo": "keon-docs",
+          "reason": "Guarantee claims must have associated evidence pack",
+          "suggested_action": "attach_evidence_pack_or_demote_to_internal"
+        },
+        {
+          "document_id": "omega-docs/docs\\architecture\\security\\fortress.md",
+          "source_repo": "omega-docs",
+          "target_repo": "keon-docs",
+          "reason": "Guarantee claims must have associated evidence pack",
+          "suggested_action": "attach_evidence_pack_or_demote_to_internal"
+        },
+        {
+          "document_id": "omega-docs-internal/agent-tests.md",
+          "source_repo": "omega-docs-internal",
+          "target_repo": "keon-docs-internal",
+          "reason": "Document should be in keon-docs-internal, currently in omega-docs-internal",
+          "suggested_action": "move_to_keon-docs-internal"
+        },
+        {
+          "document_id": "omega-docs-internal/BRANDGENIE_REBRANDING_VOTE.md",
+          "source_repo": "omega-docs-internal",
+          "target_repo": "keon-docs",
+          "reason": "Guarantee claims must have associated evidence pack",
+          "suggested_action": "attach_evidence_pack_or_demote_to_internal"
+        },
+        {
+          "document_id": "omega-docs-internal/DOCKER_DEPLOYMENT_UPDATES.md",
+          "source_repo": "omega-docs-internal",
+          "target_repo": "keon-docs",
+          "reason": "Guarantee claims must have associated evidence pack",
+          "suggested_action": "attach_evidence_pack_or_demote_to_internal"
+        },
+        {
+          "document_id": "omega-docs-internal/FastMCP_DIRECTORY_README.md",
+          "source_repo": "omega-docs-internal",
+          "target_repo": "keon-docs",
+          "reason": "Governance definitions belong in Keon repos",
+          "suggested_action": "move_to_keon_docs_or_keon_docs_internal"
+        },
+        {
+          "document_id": "omega-docs-internal/federation_core_security.md",
+          "source_repo": "omega-docs-internal",
+          "target_repo": "keon-docs",
+          "reason": "Guarantee claims must have associated evidence pack",
+          "suggested_action": "attach_evidence_pack_or_demote_to_internal"
+        },
+        {
+          "document_id": "omega-docs-internal/federation_llm_toolserver.md",
+          "source_repo": "omega-docs-internal",
+          "target_repo": "keon-docs",
+          "reason": "Guarantee claims must have associated evidence pack",
+          "suggested_action": "attach_evidence_pack_or_demote_to_internal"
+        },
+        {
+          "document_id": "omega-docs-internal/MEMORY_INGESTION_GUIDE.md",
+          "source_repo": "omega-docs-internal",
+          "target_repo": "keon-docs",
+          "reason": "Guarantee claims must have associated evidence pack",
+          "suggested_action": "attach_evidence_pack_or_demote_to_internal"
+        },
+        {
+          "document_id": "omega-docs-internal/OMEGA_ENTERPRISE_DESIGN_v1.0.md",
+          "source_repo": "omega-docs-internal",
+          "target_repo": "keon-docs",
+          "reason": "Guarantee claims must have associated evidence pack",
+          "suggested_action": "attach_evidence_pack_or_demote_to_internal"
+        },
+        {
+          "document_id": "omega-docs-internal/omega_priority_roadmap.md",
+          "source_repo": "omega-docs-internal",
+          "target_repo": "keon-docs-internal",
+          "reason": "Document should be in keon-docs-internal, currently in omega-docs-internal",
+          "suggested_action": "move_to_keon-docs-internal"
+        },
+        {
+          "document_id": "omega-docs-internal/omega_sdk_proposal_gemini.md",
+          "source_repo": "omega-docs-internal",
+          "target_repo": "keon-docs",
+          "reason": "Governance definitions belong in Keon repos",
+          "suggested_action": "move_to_keon_docs_or_keon_docs_internal"
+        },
+        {
+          "document_id": "omega-docs-internal/omega_sdk_proposal_grok.md",
+          "source_repo": "omega-docs-internal",
+          "target_repo": "keon-docs",
+          "reason": "Guarantee claims must have associated evidence pack",
+          "suggested_action": "attach_evidence_pack_or_demote_to_internal"
+        },
+        {
+          "document_id": "omega-docs-internal/PANTHEON_COLLABORATION_GUIDE.md",
+          "source_repo": "omega-docs-internal",
+          "target_repo": "keon-docs",
+          "reason": "Guarantee claims must have associated evidence pack",
+          "suggested_action": "attach_evidence_pack_or_demote_to_internal"
+        },
+        {
+          "document_id": "omega-docs-internal/PANTHEON_QUICK_REFERENCE.md",
+          "source_repo": "omega-docs-internal",
+          "target_repo": "keon-docs",
+          "reason": "Governance definitions belong in Keon repos",
+          "suggested_action": "move_to_keon_docs_or_keon_docs_internal"
+        },
+        {
+          "document_id": "omega-docs-internal/SHARD_ENRICHMENT_SUMMARY.md",
+          "source_repo": "omega-docs-internal",
+          "target_repo": "keon-docs",
+          "reason": "Governance definitions belong in Keon repos",
+          "suggested_action": "move_to_keon_docs_or_keon_docs_internal"
+        },
+        {
+          "document_id": "omega-docs-internal/upgrade_guide.md",
+          "source_repo": "omega-docs-internal",
+          "target_repo": "keon-docs",
+          "reason": "Governance definitions belong in Keon repos",
+          "suggested_action": "move_to_keon_docs_or_keon_docs_internal"
+        },
+        {
+          "document_id": "omega-docs-internal/architecture\\AZURE_DEPLOYMENT_STRATEGY.md",
+          "source_repo": "omega-docs-internal",
+          "target_repo": "keon-docs",
+          "reason": "Governance definitions belong in Keon repos",
+          "suggested_action": "move_to_keon_docs_or_keon_docs_internal"
+        },
+        {
+          "document_id": "omega-docs-internal/architecture\\KASEYA_MSP_IMPLEMENTATION_GUIDE.md",
+          "source_repo": "omega-docs-internal",
+          "target_repo": "keon-docs",
+          "reason": "Governance definitions belong in Keon repos",
+          "suggested_action": "move_to_keon_docs_or_keon_docs_internal"
+        },
+        {
+          "document_id": "omega-docs-internal/architecture\\OMEGA_ARCHITECTURE_SPEC_v1.0.md",
+          "source_repo": "omega-docs-internal",
+          "target_repo": "keon-docs",
+          "reason": "Guarantee claims must have associated evidence pack",
+          "suggested_action": "attach_evidence_pack_or_demote_to_internal"
+        },
+        {
+          "document_id": "omega-docs-internal/canon\\memory_doctrine_appendix_a.md",
+          "source_repo": "omega-docs-internal",
+          "target_repo": "keon-docs",
+          "reason": "Guarantee claims must have associated evidence pack",
+          "suggested_action": "attach_evidence_pack_or_demote_to_internal"
+        },
+        {
+          "document_id": "omega-docs-internal/conversational\\CONVERSATIONAL_PANTHEON_QUICKSTART.md",
+          "source_repo": "omega-docs-internal",
+          "target_repo": "keon-docs",
+          "reason": "Guarantee claims must have associated evidence pack",
+          "suggested_action": "attach_evidence_pack_or_demote_to_internal"
+        },
+        {
+          "document_id": "omega-docs-internal/conversational\\MCP_GATEWAY_QUICKSTART.md",
+          "source_repo": "omega-docs-internal",
+          "target_repo": "keon-docs",
+          "reason": "Guarantee claims must have associated evidence pack",
+          "suggested_action": "attach_evidence_pack_or_demote_to_internal"
+        },
+        {
+          "document_id": "omega-docs-internal/conversational\\TITAN_MCP_GATEWAY_INTEGRATION.md",
+          "source_repo": "omega-docs-internal",
+          "target_repo": "keon-docs",
+          "reason": "Guarantee claims must have associated evidence pack",
+          "suggested_action": "attach_evidence_pack_or_demote_to_internal"
+        },
+        {
+          "document_id": "omega-docs-internal/conversational\\websocket-quick-reference.md",
+          "source_repo": "omega-docs-internal",
+          "target_repo": "keon-docs",
+          "reason": "Governance definitions belong in Keon repos",
+          "suggested_action": "move_to_keon_docs_or_keon_docs_internal"
+        },
+        {
+          "document_id": "omega-docs-internal/dashboard\\COMMAND_DASHBOARD_README.md",
+          "source_repo": "omega-docs-internal",
+          "target_repo": "keon-docs",
+          "reason": "Guarantee claims must have associated evidence pack",
+          "suggested_action": "attach_evidence_pack_or_demote_to_internal"
+        },
+        {
+          "document_id": "omega-docs-internal/dashboard\\OMEGA_DASHBOARD_COMPLETE_GUIDE.md",
+          "source_repo": "omega-docs-internal",
+          "target_repo": "keon-docs",
+          "reason": "Guarantee claims must have associated evidence pack",
+          "suggested_action": "attach_evidence_pack_or_demote_to_internal"
+        },
+        {
+          "document_id": "omega-docs-internal/dashboard\\OMEGA_DASHBOARD_README.md",
+          "source_repo": "omega-docs-internal",
+          "target_repo": "keon-docs",
+          "reason": "Governance definitions belong in Keon repos",
+          "suggested_action": "move_to_keon_docs_or_keon_docs_internal"
+        },
+        {
+          "document_id": "omega-docs-internal/dashboard\\OMEGA_UI_README.md",
+          "source_repo": "omega-docs-internal",
+          "target_repo": "keon-docs",
+          "reason": "Governance definitions belong in Keon repos",
+          "suggested_action": "move_to_keon_docs_or_keon_docs_internal"
+        },
+        {
+          "document_id": "omega-docs-internal/diagrams\\06-genesis-protocol.md",
+          "source_repo": "omega-docs-internal",
+          "target_repo": "keon-docs",
+          "reason": "Governance definitions belong in Keon repos",
+          "suggested_action": "move_to_keon_docs_or_keon_docs_internal"
+        },
+        {
+          "document_id": "omega-docs-internal/diagrams\\10-security-architecture.md",
+          "source_repo": "omega-docs-internal",
+          "target_repo": "keon-docs",
+          "reason": "Guarantee claims must have associated evidence pack",
+          "suggested_action": "attach_evidence_pack_or_demote_to_internal"
+        },
+        {
+          "document_id": "omega-docs-internal/doctrine\\ADR-040-Implementation-Guide.md",
+          "source_repo": "omega-docs-internal",
+          "target_repo": "keon-docs",
+          "reason": "Guarantee claims must have associated evidence pack",
+          "suggested_action": "attach_evidence_pack_or_demote_to_internal"
+        },
+        {
+          "document_id": "omega-docs-internal/doctrine\\ADR-040-Voting-System.md",
+          "source_repo": "omega-docs-internal",
+          "target_repo": "keon-docs",
+          "reason": "Guarantee claims must have associated evidence pack",
+          "suggested_action": "attach_evidence_pack_or_demote_to_internal"
+        },
+        {
+          "document_id": "omega-docs-internal/doctrine\\COGNITIVE_FORGE_INTEGRATION.md",
+          "source_repo": "omega-docs-internal",
+          "target_repo": "keon-docs",
+          "reason": "Governance definitions belong in Keon repos",
+          "suggested_action": "move_to_keon_docs_or_keon_docs_internal"
+        },
+        {
+          "document_id": "omega-docs-internal/doctrine\\OMEGA SDK v1.0 \u2014 Arbiter\u2019s Final Decree.md",
+          "source_repo": "omega-docs-internal",
+          "target_repo": "keon-docs",
+          "reason": "Guarantee claims must have associated evidence pack",
+          "suggested_action": "attach_evidence_pack_or_demote_to_internal"
+        },
+        {
+          "document_id": "omega-docs-internal/doctrine\\OMEGA-CONSTITUTION.md",
+          "source_repo": "omega-docs-internal",
+          "target_repo": "keon-docs",
+          "reason": "Governance definitions belong in Keon repos",
+          "suggested_action": "move_to_keon_docs_or_keon_docs_internal"
+        },
+        {
+          "document_id": "omega-docs-internal/doctrine\\orchestrator_a2a_upgrade.md",
+          "source_repo": "omega-docs-internal",
+          "target_repo": "keon-docs",
+          "reason": "Guarantee claims must have associated evidence pack",
+          "suggested_action": "attach_evidence_pack_or_demote_to_internal"
+        },
+        {
+          "document_id": "omega-docs-internal/doctrine\\pantheon_workflow.md",
+          "source_repo": "omega-docs-internal",
+          "target_repo": "keon-docs",
+          "reason": "Guarantee claims must have associated evidence pack",
+          "suggested_action": "attach_evidence_pack_or_demote_to_internal"
+        },
+        {
+          "document_id": "omega-docs-internal/doctrine\\poml_rules.md",
+          "source_repo": "omega-docs-internal",
+          "target_repo": "keon-docs",
+          "reason": "Governance definitions belong in Keon repos",
+          "suggested_action": "move_to_keon_docs_or_keon_docs_internal"
+        },
+        {
+          "document_id": "omega-docs-internal/doctrine\\REQUESTTYPE_QUICK_REFERENCE.md",
+          "source_repo": "omega-docs-internal",
+          "target_repo": "keon-docs",
+          "reason": "Governance definitions belong in Keon repos",
+          "suggested_action": "move_to_keon_docs_or_keon_docs_internal"
+        },
+        {
+          "document_id": "omega-docs-internal/doctrine\\websocket-collaboration-guide.md",
+          "source_repo": "omega-docs-internal",
+          "target_repo": "keon-docs",
+          "reason": "Governance definitions belong in Keon repos",
+          "suggested_action": "move_to_keon_docs_or_keon_docs_internal"
+        },
+        {
+          "document_id": "omega-docs-internal/linkedin\\prompts_vs_context.md",
+          "source_repo": "omega-docs-internal",
+          "target_repo": "keon-docs",
+          "reason": "Governance definitions belong in Keon repos",
+          "suggested_action": "move_to_keon_docs_or_keon_docs_internal"
+        },
+        {
+          "document_id": "omega-docs-internal/marketing\\article_breakdown.md",
+          "source_repo": "omega-docs-internal",
+          "target_repo": "keon-docs",
+          "reason": "Guarantee claims must have associated evidence pack",
+          "suggested_action": "attach_evidence_pack_or_demote_to_internal"
+        },
+        {
+          "document_id": "omega-docs-internal/memory\\dcdm.md",
+          "source_repo": "omega-docs-internal",
+          "target_repo": "keon-docs",
+          "reason": "Guarantee claims must have associated evidence pack",
+          "suggested_action": "attach_evidence_pack_or_demote_to_internal"
+        },
+        {
+          "document_id": "omega-docs-internal/memory\\dcdm_ammendment_I.md",
+          "source_repo": "omega-docs-internal",
+          "target_repo": "keon-docs",
+          "reason": "Guarantee claims must have associated evidence pack",
+          "suggested_action": "attach_evidence_pack_or_demote_to_internal"
+        },
+        {
+          "document_id": "omega-docs-internal/memory\\ETERNAL_MEMORY_ARCHITECTURE.md",
+          "source_repo": "omega-docs-internal",
+          "target_repo": "keon-docs",
+          "reason": "Guarantee claims must have associated evidence pack",
+          "suggested_action": "attach_evidence_pack_or_demote_to_internal"
+        },
+        {
+          "document_id": "omega-docs-internal/memory\\memory_doctrine_appendix_a.md",
+          "source_repo": "omega-docs-internal",
+          "target_repo": "keon-docs",
+          "reason": "Guarantee claims must have associated evidence pack",
+          "suggested_action": "attach_evidence_pack_or_demote_to_internal"
+        },
+        {
+          "document_id": "omega-docs-internal/memory\\memory_law_ammendment_III.md",
+          "source_repo": "omega-docs-internal",
+          "target_repo": "keon-docs",
+          "reason": "Guarantee claims must have associated evidence pack",
+          "suggested_action": "attach_evidence_pack_or_demote_to_internal"
+        },
+        {
+          "document_id": "omega-docs-internal/memory\\titan_integration.md",
+          "source_repo": "omega-docs-internal",
+          "target_repo": "keon-docs-internal",
+          "reason": "Document should be in keon-docs-internal, currently in omega-docs-internal",
+          "suggested_action": "move_to_keon-docs-internal"
+        },
+        {
+          "document_id": "omega-docs-internal/root-dump\\BRANDGENIE_REBRANDING_VOTE.md",
+          "source_repo": "omega-docs-internal",
+          "target_repo": "keon-docs",
+          "reason": "Guarantee claims must have associated evidence pack",
+          "suggested_action": "attach_evidence_pack_or_demote_to_internal"
+        },
+        {
+          "document_id": "omega-docs-internal/root-dump\\DOCKER_DEPLOYMENT_UPDATES.md",
+          "source_repo": "omega-docs-internal",
+          "target_repo": "keon-docs",
+          "reason": "Guarantee claims must have associated evidence pack",
+          "suggested_action": "attach_evidence_pack_or_demote_to_internal"
+        },
+        {
+          "document_id": "omega-docs-internal/root-dump\\FastMCP_DIRECTORY_README.md",
+          "source_repo": "omega-docs-internal",
+          "target_repo": "keon-docs",
+          "reason": "Governance definitions belong in Keon repos",
+          "suggested_action": "move_to_keon_docs_or_keon_docs_internal"
+        },
+        {
+          "document_id": "omega-docs-internal/root-dump\\federation_core_security.md",
+          "source_repo": "omega-docs-internal",
+          "target_repo": "keon-docs",
+          "reason": "Guarantee claims must have associated evidence pack",
+          "suggested_action": "attach_evidence_pack_or_demote_to_internal"
+        },
+        {
+          "document_id": "omega-docs-internal/root-dump\\federation_llm_toolserver.md",
+          "source_repo": "omega-docs-internal",
+          "target_repo": "keon-docs",
+          "reason": "Guarantee claims must have associated evidence pack",
+          "suggested_action": "attach_evidence_pack_or_demote_to_internal"
+        },
+        {
+          "document_id": "omega-docs-internal/root-dump\\genesis_executive_summary.md",
+          "source_repo": "omega-docs-internal",
+          "target_repo": "keon-docs",
+          "reason": "Guarantee claims must have associated evidence pack",
+          "suggested_action": "attach_evidence_pack_or_demote_to_internal"
+        },
+        {
+          "document_id": "omega-docs-internal/root-dump\\MEMORY_INGESTION_GUIDE.md",
+          "source_repo": "omega-docs-internal",
+          "target_repo": "keon-docs",
+          "reason": "Guarantee claims must have associated evidence pack",
+          "suggested_action": "attach_evidence_pack_or_demote_to_internal"
+        },
+        {
+          "document_id": "omega-docs-internal/root-dump\\OMEGA_ENTERPRISE_DESIGN_v1.0.md",
+          "source_repo": "omega-docs-internal",
+          "target_repo": "keon-docs",
+          "reason": "Guarantee claims must have associated evidence pack",
+          "suggested_action": "attach_evidence_pack_or_demote_to_internal"
+        },
+        {
+          "document_id": "omega-docs-internal/root-dump\\omega_priority_roadmap.md",
+          "source_repo": "omega-docs-internal",
+          "target_repo": "keon-docs-internal",
+          "reason": "Document should be in keon-docs-internal, currently in omega-docs-internal",
+          "suggested_action": "move_to_keon-docs-internal"
+        },
+        {
+          "document_id": "omega-docs-internal/root-dump\\omega_sdk_proposal_gemini.md",
+          "source_repo": "omega-docs-internal",
+          "target_repo": "keon-docs",
+          "reason": "Governance definitions belong in Keon repos",
+          "suggested_action": "move_to_keon_docs_or_keon_docs_internal"
+        },
+        {
+          "document_id": "omega-docs-internal/root-dump\\omega_sdk_proposal_grok.md",
+          "source_repo": "omega-docs-internal",
+          "target_repo": "keon-docs",
+          "reason": "Guarantee claims must have associated evidence pack",
+          "suggested_action": "attach_evidence_pack_or_demote_to_internal"
+        },
+        {
+          "document_id": "omega-docs-internal/root-dump\\PANTHEON_COLLABORATION_GUIDE.md",
+          "source_repo": "omega-docs-internal",
+          "target_repo": "keon-docs",
+          "reason": "Guarantee claims must have associated evidence pack",
+          "suggested_action": "attach_evidence_pack_or_demote_to_internal"
+        },
+        {
+          "document_id": "omega-docs-internal/root-dump\\PANTHEON_QUICK_REFERENCE.md",
+          "source_repo": "omega-docs-internal",
+          "target_repo": "keon-docs",
+          "reason": "Governance definitions belong in Keon repos",
+          "suggested_action": "move_to_keon_docs_or_keon_docs_internal"
+        },
+        {
+          "document_id": "omega-docs-internal/root-dump\\SHARD_ENRICHMENT_SUMMARY.md",
+          "source_repo": "omega-docs-internal",
+          "target_repo": "keon-docs",
+          "reason": "Governance definitions belong in Keon repos",
+          "suggested_action": "move_to_keon_docs_or_keon_docs_internal"
+        },
+        {
+          "document_id": "omega-docs-internal/root-dump\\TEAM_PURGE_CHECKLIST.md",
+          "source_repo": "omega-docs-internal",
+          "target_repo": "keon-docs",
+          "reason": "Governance definitions belong in Keon repos",
+          "suggested_action": "move_to_keon_docs_or_keon_docs_internal"
+        },
+        {
+          "document_id": "omega-docs-internal/root-dump\\upgrade_guide.md",
+          "source_repo": "omega-docs-internal",
+          "target_repo": "keon-docs",
+          "reason": "Governance definitions belong in Keon repos",
+          "suggested_action": "move_to_keon_docs_or_keon_docs_internal"
+        },
+        {
+          "document_id": "omega-docs-internal/scripts\\README.md",
+          "source_repo": "omega-docs-internal",
+          "target_repo": "keon-docs",
+          "reason": "Governance definitions belong in Keon repos",
+          "suggested_action": "move_to_keon_docs_or_keon_docs_internal"
+        },
+        {
+          "document_id": "omega-docs-internal/security\\federation_core_endpoints_auth.md",
+          "source_repo": "omega-docs-internal",
+          "target_repo": "keon-docs",
+          "reason": "Guarantee claims must have associated evidence pack",
+          "suggested_action": "attach_evidence_pack_or_demote_to_internal"
+        },
+        {
+          "document_id": "omega-docs-internal/security\\SECURITY_IMPLEMENTATION_SUMMARY.md",
+          "source_repo": "omega-docs-internal",
+          "target_repo": "keon-docs",
+          "reason": "Guarantee claims must have associated evidence pack",
+          "suggested_action": "attach_evidence_pack_or_demote_to_internal"
+        },
+        {
+          "document_id": "omega-docs-internal/titans\\TITAN_CONFIG_ARCHITECTURE.md",
+          "source_repo": "omega-docs-internal",
+          "target_repo": "keon-docs",
+          "reason": "Guarantee claims must have associated evidence pack",
+          "suggested_action": "attach_evidence_pack_or_demote_to_internal"
+        },
+        {
+          "document_id": "omega-docs-internal/website\\docs\\faq.md",
+          "source_repo": "omega-docs-internal",
+          "target_repo": "keon-docs",
+          "reason": "Guarantee claims must have associated evidence pack",
+          "suggested_action": "attach_evidence_pack_or_demote_to_internal"
+        },
+        {
+          "document_id": "omega-docs-internal/website\\docs\\troubleshooting.md",
+          "source_repo": "omega-docs-internal",
+          "target_repo": "keon-docs",
+          "reason": "Governance definitions belong in Keon repos",
+          "suggested_action": "move_to_keon_docs_or_keon_docs_internal"
+        },
+        {
+          "document_id": "omega-docs-internal/website\\docs\\api\\overview.md",
+          "source_repo": "omega-docs-internal",
+          "target_repo": "keon-docs-internal",
+          "reason": "Document should be in keon-docs-internal, currently in omega-docs-internal",
+          "suggested_action": "move_to_keon-docs-internal"
+        },
+        {
+          "document_id": "omega-docs-internal/website\\docs\\architecture\\overview.md",
+          "source_repo": "omega-docs-internal",
+          "target_repo": "keon-docs",
+          "reason": "Governance definitions belong in Keon repos",
+          "suggested_action": "move_to_keon_docs_or_keon_docs_internal"
+        },
+        {
+          "document_id": "omega-docs-internal/website\\docs\\getting-started\\core-concepts.md",
+          "source_repo": "omega-docs-internal",
+          "target_repo": "keon-docs",
+          "reason": "Guarantee claims must have associated evidence pack",
+          "suggested_action": "attach_evidence_pack_or_demote_to_internal"
+        },
+        {
+          "document_id": "omega-docs-internal/website\\docs\\security\\best-practices.md",
+          "source_repo": "omega-docs-internal",
+          "target_repo": "keon-docs",
+          "reason": "Guarantee claims must have associated evidence pack",
+          "suggested_action": "attach_evidence_pack_or_demote_to_internal"
+        },
+        {
+          "document_id": "omega-docs-internal/website\\docs\\developer\\agents\\patterns.md",
+          "source_repo": "omega-docs-internal",
+          "target_repo": "keon-docs",
+          "reason": "Guarantee claims must have associated evidence pack",
+          "suggested_action": "attach_evidence_pack_or_demote_to_internal"
+        },
+        {
+          "document_id": "omega-docs-internal/teams\\agents\\praetorian_guard\\README_HEALTH_REMEDIATION.md",
+          "source_repo": "omega-docs-internal",
+          "target_repo": "keon-docs",
+          "reason": "Guarantee claims must have associated evidence pack",
+          "suggested_action": "attach_evidence_pack_or_demote_to_internal"
+        },
+        {
+          "document_id": "omega-docs-internal/scripts\\omega-core\\AUTHENTICATION_GUIDE.md",
+          "source_repo": "omega-docs-internal",
+          "target_repo": "keon-docs",
+          "reason": "Guarantee claims must have associated evidence pack",
+          "suggested_action": "attach_evidence_pack_or_demote_to_internal"
+        },
+        {
+          "document_id": "omega-docs-internal/scripts\\omega-core\\PANTHEON_COLLABORATION_README.md",
+          "source_repo": "omega-docs-internal",
+          "target_repo": "keon-docs",
+          "reason": "Governance definitions belong in Keon repos",
+          "suggested_action": "move_to_keon_docs_or_keon_docs_internal"
+        },
+        {
+          "document_id": "omega-docs-internal/root-dump\\architecture\\AZURE_DEPLOYMENT_STRATEGY.md",
+          "source_repo": "omega-docs-internal",
+          "target_repo": "keon-docs",
+          "reason": "Governance definitions belong in Keon repos",
+          "suggested_action": "move_to_keon_docs_or_keon_docs_internal"
+        },
+        {
+          "document_id": "omega-docs-internal/root-dump\\architecture\\KASEYA_MSP_IMPLEMENTATION_GUIDE.md",
+          "source_repo": "omega-docs-internal",
+          "target_repo": "keon-docs",
+          "reason": "Governance definitions belong in Keon repos",
+          "suggested_action": "move_to_keon_docs_or_keon_docs_internal"
+        },
+        {
+          "document_id": "omega-docs-internal/root-dump\\architecture\\OMEGA_ARCHITECTURE_SPEC_v1.0.md",
+          "source_repo": "omega-docs-internal",
+          "target_repo": "keon-docs",
+          "reason": "Guarantee claims must have associated evidence pack",
+          "suggested_action": "attach_evidence_pack_or_demote_to_internal"
+        },
+        {
+          "document_id": "omega-docs-internal/root-dump\\canon\\memory_doctrine_appendix_a.md",
+          "source_repo": "omega-docs-internal",
+          "target_repo": "keon-docs",
+          "reason": "Guarantee claims must have associated evidence pack",
+          "suggested_action": "attach_evidence_pack_or_demote_to_internal"
+        },
+        {
+          "document_id": "omega-docs-internal/root-dump\\conversational\\CONVERSATIONAL_PANTHEON_QUICKSTART.md",
+          "source_repo": "omega-docs-internal",
+          "target_repo": "keon-docs",
+          "reason": "Guarantee claims must have associated evidence pack",
+          "suggested_action": "attach_evidence_pack_or_demote_to_internal"
+        },
+        {
+          "document_id": "omega-docs-internal/root-dump\\conversational\\MCP_GATEWAY_QUICKSTART.md",
+          "source_repo": "omega-docs-internal",
+          "target_repo": "keon-docs",
+          "reason": "Guarantee claims must have associated evidence pack",
+          "suggested_action": "attach_evidence_pack_or_demote_to_internal"
+        },
+        {
+          "document_id": "omega-docs-internal/root-dump\\conversational\\TITAN_MCP_GATEWAY_INTEGRATION.md",
+          "source_repo": "omega-docs-internal",
+          "target_repo": "keon-docs",
+          "reason": "Guarantee claims must have associated evidence pack",
+          "suggested_action": "attach_evidence_pack_or_demote_to_internal"
+        },
+        {
+          "document_id": "omega-docs-internal/root-dump\\conversational\\websocket-quick-reference.md",
+          "source_repo": "omega-docs-internal",
+          "target_repo": "keon-docs",
+          "reason": "Governance definitions belong in Keon repos",
+          "suggested_action": "move_to_keon_docs_or_keon_docs_internal"
+        },
+        {
+          "document_id": "omega-docs-internal/root-dump\\dashboard\\COMMAND_DASHBOARD_README.md",
+          "source_repo": "omega-docs-internal",
+          "target_repo": "keon-docs",
+          "reason": "Guarantee claims must have associated evidence pack",
+          "suggested_action": "attach_evidence_pack_or_demote_to_internal"
+        },
+        {
+          "document_id": "omega-docs-internal/root-dump\\dashboard\\OMEGA_DASHBOARD_COMPLETE_GUIDE.md",
+          "source_repo": "omega-docs-internal",
+          "target_repo": "keon-docs",
+          "reason": "Guarantee claims must have associated evidence pack",
+          "suggested_action": "attach_evidence_pack_or_demote_to_internal"
+        },
+        {
+          "document_id": "omega-docs-internal/root-dump\\dashboard\\OMEGA_DASHBOARD_README.md",
+          "source_repo": "omega-docs-internal",
+          "target_repo": "keon-docs",
+          "reason": "Governance definitions belong in Keon repos",
+          "suggested_action": "move_to_keon_docs_or_keon_docs_internal"
+        },
+        {
+          "document_id": "omega-docs-internal/root-dump\\dashboard\\OMEGA_UI_README.md",
+          "source_repo": "omega-docs-internal",
+          "target_repo": "keon-docs",
+          "reason": "Governance definitions belong in Keon repos",
+          "suggested_action": "move_to_keon_docs_or_keon_docs_internal"
+        },
+        {
+          "document_id": "omega-docs-internal/root-dump\\diagrams\\06-genesis-protocol.md",
+          "source_repo": "omega-docs-internal",
+          "target_repo": "keon-docs",
+          "reason": "Governance definitions belong in Keon repos",
+          "suggested_action": "move_to_keon_docs_or_keon_docs_internal"
+        },
+        {
+          "document_id": "omega-docs-internal/root-dump\\diagrams\\10-security-architecture.md",
+          "source_repo": "omega-docs-internal",
+          "target_repo": "keon-docs",
+          "reason": "Guarantee claims must have associated evidence pack",
+          "suggested_action": "attach_evidence_pack_or_demote_to_internal"
+        },
+        {
+          "document_id": "omega-docs-internal/root-dump\\linkedin\\prompts_vs_context.md",
+          "source_repo": "omega-docs-internal",
+          "target_repo": "keon-docs",
+          "reason": "Governance definitions belong in Keon repos",
+          "suggested_action": "move_to_keon_docs_or_keon_docs_internal"
+        },
+        {
+          "document_id": "omega-docs-internal/root-dump\\memory\\dcdm.md",
+          "source_repo": "omega-docs-internal",
+          "target_repo": "keon-docs",
+          "reason": "Guarantee claims must have associated evidence pack",
+          "suggested_action": "attach_evidence_pack_or_demote_to_internal"
+        },
+        {
+          "document_id": "omega-docs-internal/root-dump\\memory\\dcdm_ammendment_I.md",
+          "source_repo": "omega-docs-internal",
+          "target_repo": "keon-docs",
+          "reason": "Guarantee claims must have associated evidence pack",
+          "suggested_action": "attach_evidence_pack_or_demote_to_internal"
+        },
+        {
+          "document_id": "omega-docs-internal/root-dump\\memory\\ETERNAL_MEMORY_ARCHITECTURE.md",
+          "source_repo": "omega-docs-internal",
+          "target_repo": "keon-docs",
+          "reason": "Guarantee claims must have associated evidence pack",
+          "suggested_action": "attach_evidence_pack_or_demote_to_internal"
+        },
+        {
+          "document_id": "omega-docs-internal/root-dump\\memory\\memory_doctrine_appendix_a.md",
+          "source_repo": "omega-docs-internal",
+          "target_repo": "keon-docs",
+          "reason": "Guarantee claims must have associated evidence pack",
+          "suggested_action": "attach_evidence_pack_or_demote_to_internal"
+        },
+        {
+          "document_id": "omega-docs-internal/root-dump\\memory\\memory_law_ammendment_III.md",
+          "source_repo": "omega-docs-internal",
+          "target_repo": "keon-docs",
+          "reason": "Guarantee claims must have associated evidence pack",
+          "suggested_action": "attach_evidence_pack_or_demote_to_internal"
+        },
+        {
+          "document_id": "omega-docs-internal/root-dump\\memory\\titan_integration.md",
+          "source_repo": "omega-docs-internal",
+          "target_repo": "keon-docs-internal",
+          "reason": "Document should be in keon-docs-internal, currently in omega-docs-internal",
+          "suggested_action": "move_to_keon-docs-internal"
+        },
+        {
+          "document_id": "omega-docs-internal/root-dump\\scripts\\README.md",
+          "source_repo": "omega-docs-internal",
+          "target_repo": "keon-docs",
+          "reason": "Governance definitions belong in Keon repos",
+          "suggested_action": "move_to_keon_docs_or_keon_docs_internal"
+        },
+        {
+          "document_id": "omega-docs-internal/root-dump\\security\\federation_core_endpoints_auth.md",
+          "source_repo": "omega-docs-internal",
+          "target_repo": "keon-docs",
+          "reason": "Guarantee claims must have associated evidence pack",
+          "suggested_action": "attach_evidence_pack_or_demote_to_internal"
+        },
+        {
+          "document_id": "omega-docs-internal/root-dump\\security\\SECURITY_IMPLEMENTATION_SUMMARY.md",
+          "source_repo": "omega-docs-internal",
+          "target_repo": "keon-docs",
+          "reason": "Guarantee claims must have associated evidence pack",
+          "suggested_action": "attach_evidence_pack_or_demote_to_internal"
+        },
+        {
+          "document_id": "omega-docs-internal/root-dump\\titans\\TITAN_CONFIG_ARCHITECTURE.md",
+          "source_repo": "omega-docs-internal",
+          "target_repo": "keon-docs",
+          "reason": "Guarantee claims must have associated evidence pack",
+          "suggested_action": "attach_evidence_pack_or_demote_to_internal"
+        },
+        {
+          "document_id": "omega-docs-internal/root-dump\\website\\docs\\faq.md",
+          "source_repo": "omega-docs-internal",
+          "target_repo": "keon-docs",
+          "reason": "Guarantee claims must have associated evidence pack",
+          "suggested_action": "attach_evidence_pack_or_demote_to_internal"
+        },
+        {
+          "document_id": "omega-docs-internal/root-dump\\website\\docs\\troubleshooting.md",
+          "source_repo": "omega-docs-internal",
+          "target_repo": "keon-docs",
+          "reason": "Governance definitions belong in Keon repos",
+          "suggested_action": "move_to_keon_docs_or_keon_docs_internal"
+        },
+        {
+          "document_id": "omega-docs-internal/root-dump\\website\\docs\\api\\overview.md",
+          "source_repo": "omega-docs-internal",
+          "target_repo": "keon-docs-internal",
+          "reason": "Document should be in keon-docs-internal, currently in omega-docs-internal",
+          "suggested_action": "move_to_keon-docs-internal"
+        },
+        {
+          "document_id": "omega-docs-internal/root-dump\\website\\docs\\architecture\\overview.md",
+          "source_repo": "omega-docs-internal",
+          "target_repo": "keon-docs",
+          "reason": "Governance definitions belong in Keon repos",
+          "suggested_action": "move_to_keon_docs_or_keon_docs_internal"
+        },
+        {
+          "document_id": "omega-docs-internal/root-dump\\website\\docs\\developer\\agents\\patterns.md",
+          "source_repo": "omega-docs-internal",
+          "target_repo": "keon-docs",
+          "reason": "Guarantee claims must have associated evidence pack",
+          "suggested_action": "attach_evidence_pack_or_demote_to_internal"
+        },
+        {
+          "document_id": "omega-docs-internal/root-dump\\teams\\agents\\praetorian_guard\\README_HEALTH_REMEDIATION.md",
+          "source_repo": "omega-docs-internal",
+          "target_repo": "keon-docs",
+          "reason": "Guarantee claims must have associated evidence pack",
+          "suggested_action": "attach_evidence_pack_or_demote_to_internal"
+        },
+        {
+          "document_id": "omega-docs-internal/root-dump\\scripts\\omega-core\\AUTHENTICATION_GUIDE.md",
+          "source_repo": "omega-docs-internal",
+          "target_repo": "keon-docs",
+          "reason": "Guarantee claims must have associated evidence pack",
+          "suggested_action": "attach_evidence_pack_or_demote_to_internal"
+        },
+        {
+          "document_id": "omega-docs-internal/root-dump\\scripts\\omega-core\\PANTHEON_COLLABORATION_README.md",
+          "source_repo": "omega-docs-internal",
+          "target_repo": "keon-docs",
+          "reason": "Governance definitions belong in Keon repos",
+          "suggested_action": "move_to_keon_docs_or_keon_docs_internal"
+        },
+        {
+          "document_id": "omega-docs-internal/root-dump\\proofs\\proof-001-personal-signal-firewall\\README.md",
+          "source_repo": "omega-docs-internal",
+          "target_repo": "keon-docs",
+          "reason": "Governance definitions belong in Keon repos",
+          "suggested_action": "move_to_keon_docs_or_keon_docs_internal"
+        },
+        {
+          "document_id": "omega-docs-internal/root-dump\\memory\\backfill\\BACKFILL_README.md",
+          "source_repo": "omega-docs-internal",
+          "target_repo": "keon-docs",
+          "reason": "Guarantee claims must have associated evidence pack",
+          "suggested_action": "attach_evidence_pack_or_demote_to_internal"
+        },
+        {
+          "document_id": "omega-docs-internal/root-dump\\memory\\guides\\MEMORY_QUICK_REFERENCE.md",
+          "source_repo": "omega-docs-internal",
+          "target_repo": "keon-docs",
+          "reason": "Governance definitions belong in Keon repos",
+          "suggested_action": "move_to_keon_docs_or_keon_docs_internal"
+        },
+        {
+          "document_id": "omega-docs-internal/root-dump\\memory\\shards\\QDRANT_SETUP_GUIDE.md",
+          "source_repo": "omega-docs-internal",
+          "target_repo": "keon-docs",
+          "reason": "Guarantee claims must have associated evidence pack",
+          "suggested_action": "attach_evidence_pack_or_demote_to_internal"
+        },
+        {
+          "document_id": "omega-docs-internal/root-dump\\memory\\storage\\STORAGE_ARCHITECTURE_VERIFICATION.md",
+          "source_repo": "omega-docs-internal",
+          "target_repo": "keon-docs",
+          "reason": "Guarantee claims must have associated evidence pack",
+          "suggested_action": "attach_evidence_pack_or_demote_to_internal"
+        },
+        {
+          "document_id": "omega-docs-internal/root-dump\\infrastructure\\docker\\README.md",
+          "source_repo": "omega-docs-internal",
+          "target_repo": "keon-docs",
+          "reason": "Governance definitions belong in Keon repos",
+          "suggested_action": "move_to_keon_docs_or_keon_docs_internal"
+        },
+        {
+          "document_id": "omega-docs-internal/root-dump\\infrastructure\\services\\genesis_health_sentinel\\README_DOCTRINAL_COMPLIANCE.md",
+          "source_repo": "omega-docs-internal",
+          "target_repo": "keon-docs",
+          "reason": "Governance definitions belong in Keon repos",
+          "suggested_action": "move_to_keon_docs_or_keon_docs_internal"
+        },
+        {
+          "document_id": "omega-docs-internal/root-dump\\governance\\ascension_codex\\QUICKSTART.md",
+          "source_repo": "omega-docs-internal",
+          "target_repo": "keon-docs",
+          "reason": "Governance definitions belong in Keon repos",
+          "suggested_action": "move_to_keon_docs_or_keon_docs_internal"
+        },
+        {
+          "document_id": "omega-docs-internal/root-dump\\governance\\ascension_codex\\k8s\\README.md",
+          "source_repo": "omega-docs-internal",
+          "target_repo": "keon-docs",
+          "reason": "Governance definitions belong in Keon repos",
+          "suggested_action": "move_to_keon_docs_or_keon_docs_internal"
+        },
+        {
+          "document_id": "omega-docs-internal/root-dump\\governance\\ascension_codex\\manifests\\README.md",
+          "source_repo": "omega-docs-internal",
+          "target_repo": "keon-docs",
+          "reason": "Governance definitions belong in Keon repos",
+          "suggested_action": "move_to_keon_docs_or_keon_docs_internal"
+        },
+        {
+          "document_id": "omega-docs-internal/root-dump\\federation-core\\deployments\\phase-1\\README.md",
+          "source_repo": "omega-docs-internal",
+          "target_repo": "keon-docs",
+          "reason": "Governance definitions belong in Keon repos",
+          "suggested_action": "move_to_keon_docs_or_keon_docs_internal"
+        },
+        {
+          "document_id": "omega-docs-internal/root-dump\\dashboard\\omega-dashboard\\OMEGA_DASHBOARD_README.md",
+          "source_repo": "omega-docs-internal",
+          "target_repo": "keon-docs",
+          "reason": "Governance definitions belong in Keon repos",
+          "suggested_action": "move_to_keon_docs_or_keon_docs_internal"
+        },
+        {
+          "document_id": "omega-docs-internal/root-dump\\architecture\\capabilities\\capability_ownership.md",
+          "source_repo": "omega-docs-internal",
+          "target_repo": "keon-docs",
+          "reason": "Guarantee claims must have associated evidence pack",
+          "suggested_action": "attach_evidence_pack_or_demote_to_internal"
+        },
+        {
+          "document_id": "omega-docs-internal/root-dump\\architecture\\resilience\\DEPLOYMENT_RESILIENCE_SYSTEM.md",
+          "source_repo": "omega-docs-internal",
+          "target_repo": "keon-docs",
+          "reason": "Guarantee claims must have associated evidence pack",
+          "suggested_action": "attach_evidence_pack_or_demote_to_internal"
+        },
+        {
+          "document_id": "omega-docs-internal/memory\\backfill\\BACKFILL_README.md",
+          "source_repo": "omega-docs-internal",
+          "target_repo": "keon-docs",
+          "reason": "Guarantee claims must have associated evidence pack",
+          "suggested_action": "attach_evidence_pack_or_demote_to_internal"
+        },
+        {
+          "document_id": "omega-docs-internal/memory\\guides\\MEMORY_QUICK_REFERENCE.md",
+          "source_repo": "omega-docs-internal",
+          "target_repo": "keon-docs",
+          "reason": "Governance definitions belong in Keon repos",
+          "suggested_action": "move_to_keon_docs_or_keon_docs_internal"
+        },
+        {
+          "document_id": "omega-docs-internal/memory\\shards\\QDRANT_SETUP_GUIDE.md",
+          "source_repo": "omega-docs-internal",
+          "target_repo": "keon-docs",
+          "reason": "Guarantee claims must have associated evidence pack",
+          "suggested_action": "attach_evidence_pack_or_demote_to_internal"
+        },
+        {
+          "document_id": "omega-docs-internal/memory\\storage\\STORAGE_ARCHITECTURE_VERIFICATION.md",
+          "source_repo": "omega-docs-internal",
+          "target_repo": "keon-docs",
+          "reason": "Guarantee claims must have associated evidence pack",
+          "suggested_action": "attach_evidence_pack_or_demote_to_internal"
+        },
+        {
+          "document_id": "omega-docs-internal/infrastructure\\docker\\README.md",
+          "source_repo": "omega-docs-internal",
+          "target_repo": "keon-docs",
+          "reason": "Governance definitions belong in Keon repos",
+          "suggested_action": "move_to_keon_docs_or_keon_docs_internal"
+        },
+        {
+          "document_id": "omega-docs-internal/infrastructure\\services\\genesis_health_sentinel\\README_DOCTRINAL_COMPLIANCE.md",
+          "source_repo": "omega-docs-internal",
+          "target_repo": "keon-docs",
+          "reason": "Governance definitions belong in Keon repos",
+          "suggested_action": "move_to_keon_docs_or_keon_docs_internal"
+        },
+        {
+          "document_id": "omega-docs-internal/governance\\ascension_codex\\QUICKSTART.md",
+          "source_repo": "omega-docs-internal",
+          "target_repo": "keon-docs",
+          "reason": "Governance definitions belong in Keon repos",
+          "suggested_action": "move_to_keon_docs_or_keon_docs_internal"
+        },
+        {
+          "document_id": "omega-docs-internal/governance\\ascension_codex\\k8s\\README.md",
+          "source_repo": "omega-docs-internal",
+          "target_repo": "keon-docs",
+          "reason": "Governance definitions belong in Keon repos",
+          "suggested_action": "move_to_keon_docs_or_keon_docs_internal"
+        },
+        {
+          "document_id": "omega-docs-internal/governance\\ascension_codex\\manifests\\README.md",
+          "source_repo": "omega-docs-internal",
+          "target_repo": "keon-docs",
+          "reason": "Governance definitions belong in Keon repos",
+          "suggested_action": "move_to_keon_docs_or_keon_docs_internal"
+        },
+        {
+          "document_id": "omega-docs-internal/federation-core\\deployments\\phase-1\\README.md",
+          "source_repo": "omega-docs-internal",
+          "target_repo": "keon-docs",
+          "reason": "Governance definitions belong in Keon repos",
+          "suggested_action": "move_to_keon_docs_or_keon_docs_internal"
+        },
+        {
+          "document_id": "omega-docs-internal/dashboard\\omega-dashboard\\OMEGA_DASHBOARD_README.md",
+          "source_repo": "omega-docs-internal",
+          "target_repo": "keon-docs",
+          "reason": "Governance definitions belong in Keon repos",
+          "suggested_action": "move_to_keon_docs_or_keon_docs_internal"
+        },
+        {
+          "document_id": "omega-docs-internal/archive\\pruned\\2025-12-16_1116\\conversational\\CONVERSATIONAL_PANTHEON_SUMMARY.md",
+          "source_repo": "omega-docs-internal",
+          "target_repo": "keon-docs-internal",
+          "reason": "Document should be in keon-docs-internal, currently in omega-docs-internal",
+          "suggested_action": "move_to_keon-docs-internal"
+        },
+        {
+          "document_id": "omega-docs-internal/architecture\\capabilities\\capability_ownership.md",
+          "source_repo": "omega-docs-internal",
+          "target_repo": "keon-docs",
+          "reason": "Guarantee claims must have associated evidence pack",
+          "suggested_action": "attach_evidence_pack_or_demote_to_internal"
+        },
+        {
+          "document_id": "omega-docs-internal/architecture\\resilience\\DEPLOYMENT_RESILIENCE_SYSTEM.md",
+          "source_repo": "omega-docs-internal",
+          "target_repo": "keon-docs",
+          "reason": "Guarantee claims must have associated evidence pack",
+          "suggested_action": "attach_evidence_pack_or_demote_to_internal"
+        },
+        {
+          "document_id": "keon-docs/whitepaper\\CHANGELOG.md",
+          "source_repo": "keon-docs",
+          "target_repo": "keon-docs",
+          "reason": "Guarantee claims must have associated evidence pack",
+          "suggested_action": "attach_evidence_pack_or_demote_to_internal"
+        }
+      ],
+      "denials": [
+        {
+          "document_id": "omega-docs-internal/doctrine\\CONVERSATIONAL_PANTHEON_ARCHITECTURE.md",
+          "source_repo": "omega-docs-internal",
+          "violation": "forbid_drafts_in_public",
+          "reason": "Draft/experimental content cannot be in public repos"
+        },
+        {
+          "document_id": "keon-docs-internal/whitepaper\\WHITEPAPER.md",
+          "source_repo": "keon-docs-internal",
+          "violation": "forbid_drafts_in_public",
+          "reason": "Draft/experimental content cannot be in public repos"
+        }
+      ],
+      "audit_only": true,
+      "no_changes_applied": true,
+      "timestamp": "2026-02-04T19:49:31.283774"
+    }
+  },
+  "status": "audit_complete"
+}

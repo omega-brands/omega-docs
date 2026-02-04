@@ -1,0 +1,83 @@
+{
+  "workflow_id": "wf-docs-categorization-2026-02-04T18-42-31_165192",
+  "completion_timestamp": "2026-02-04T19:50:10.744273",
+  "authority": "User",
+  "phases_executed": [
+    "1-collect",
+    "2-classify",
+    "3-policy_evaluate",
+    "4-drift_report",
+    "5-decision_gate",
+    "6-movements",
+    "6-verification"
+  ],
+  "pre_move_classification": {
+    "allow": 140,
+    "mitigate": 621,
+    "deny": 2,
+    "total": 763
+  },
+  "human_directives": {
+    "total": 13,
+    "approved": 11,
+    "rejected": 2,
+    "files_covered": 623
+  },
+  "file_movements_executed": {
+    "successful": 469,
+    "failed": 0,
+    "directives_executed": [
+      "A",
+      "B",
+      "E",
+      "F",
+      "I",
+      "J",
+      "DENIAL-2"
+    ]
+  },
+  "post_move_verification": {
+    "allow": 607,
+    "mitigate": 157,
+    "deny": 2,
+    "total": 766,
+    "allow_improvement": 467
+  },
+  "remediation_pending": {
+    "directives": [
+      "C",
+      "G",
+      "K"
+    ],
+    "files": 84,
+    "status": "flagged_for_separate_workflow"
+  },
+  "directives_not_executed": {
+    "rejected_D": {
+      "files": 55,
+      "reason": "No movement authorized",
+      "status": "stayed_in_place"
+    },
+    "rejected_H": {
+      "files": 6,
+      "reason": "No movement authorized",
+      "status": "stayed_in_place"
+    }
+  },
+  "evidence_files": {
+    "pre_move_classification": "drift_report_2026-02-04T13-42-32.json",
+    "human_directives": "decisions/directive_receipts.json",
+    "file_movements": "decisions/movement_audit_log.jsonl",
+    "post_move_verification": "reclassification_report_2026-02-04T14-49-31.json",
+    "remediation_manifest": "REMEDIATION_TASK_MANIFEST.md",
+    "commit_instructions": "decisions/commit_instructions.json"
+  },
+  "governance_principles": [
+    "Human authority is non-delegable",
+    "All decisions immutable (hashed, receipted)",
+    "No silent changes (explicit directives required)",
+    "Policy compliance enforced (fail-closed)",
+    "Complete audit trail (all phases documented)",
+    "No public promotions without explicit workflows"
+  ]
+}

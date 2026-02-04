@@ -1,0 +1,176 @@
+policy:
+  id: "policy.remediation"
+  version: "1.0.0"
+  description: "Governance policy for human-in-the-loop remediation workflows"
+  tier: "strict"
+
+  # Remediation is governed but human-decided
+  allowed_actions: ["ingest", "present", "decide", "apply", "verify"]
+  denied_actions: ["auto_approve", "silent_commit", "batch_modify"]
+
+  rules:
+    # ========== INGEST PHASE ==========
+
+    - id: "ingest_verify_evidence"
+      description: "Evidence pack must be integrity-verified before remediation"
+      severity: "MUST"
+      enforcement: "structural"
+      target: "ingest_phase"
+      action: "deny"
+      parameters:
+        required_fields:
+          - "seal_manifest"
+          - "receipts_jsonl"
+          - "summary_json"
+        verification_method: "sha256_hash_manifest"
+
+    # ========== DECISION PHASE ==========
+
+    - id: "decision_authority_required"
+      description: "All decisions must be made by named human authority"
+      severity: "MUST"
+      enforcement: "semantic"
+      target: "decision_phase"
+      action: "deny_if_ambiguous"
+      parameters:
+        required_fields: ["authority", "timestamp"]
+        authority_cannot_be: ["system", "automation", "auto"]
+
+    - id: "reject_requires_rationale"
+      description: "REJECT decisions must include explicit rationale"
+      severity: "MUST"
+      enforcement: "semantic"
+      target: "decision_phase"
+      action: "deny"
+      parameters:
+        rule_text: "if decision_type == REJECT then rationale is required"
+        min_rationale_length: 20
+
+    - id: "p0_findings_must_be_decided"
+      description: "P0 (MUST) severity findings require ACCEPT or MODIFY"
+      severity: "MUST"
+      enforcement: "semantic"
+      target: "decision_phase"
+      action: "deny"
+      parameters:
+        rule_text: "if severity == P0 then decision in [ACCEPT, MODIFY]"
+        context: "P0 findings cannot be silently ignored"
+
+    - id: "modify_requires_content"
+      description: "MODIFY decisions must provide alternative content"
+      severity: "MUST"
+      enforcement: "semantic"
+      target: "decision_phase"
+      action: "deny"
+      parameters:
+        rule_text: "if decision_type == MODIFY then modified_content is not empty"
+
+    - id: "no_pii_in_decisions"
+      description: "Decisions cannot contain PII"
+      severity: "MUST"
+      enforcement: "regex_scan"
+      target: "decision_phase"
+      action: "deny_if_detected"
+      parameters:
+        patterns:
+          - "\\b[A-Z0-9._%+-]+@[A-Z0-9.-]+\\.[A-Z]{2,}\\b"  # Email
+          - "\\b\\d{3}-\\d{3}-\\d{4}\\b"  # Phone
+
+    # ========== APPLICATION PHASE ==========
+
+    - id: "apply_only_approved_changes"
+      description: "Only ACCEPT and MODIFY decisions are applied"
+      severity: "MUST"
+      enforcement: "structural"
+      target: "apply_phase"
+      action: "deny"
+      parameters:
+        applied_decisions_only: ["ACCEPT", "MODIFY"]
+        rejected_decisions_action: "skip"
+
+    - id: "apply_respects_mode"
+      description: "Respect draft-only vs writable mode enforcement"
+      severity: "MUST"
+      enforcement: "structural"
+      target: "apply_phase"
+      action: "deny"
+      parameters:
+        draft_mode: "no_repo_write"
+        writable_mode: "requires_explicit_authorization"
+
+    - id: "apply_verify_immutability"
+      description: "Applied changes cannot be modified after application"
+      severity: "MUST"
+      enforcement: "structural"
+      target: "apply_phase"
+      action: "deny"
+      parameters:
+        change_lock: "applied_changes_are_immutable"
+        trace: "commit_sha_or_draft_hash_recorded"
+
+    # ========== VERIFICATION PHASE ==========
+
+    - id: "verify_drift_reduction"
+      description: "Re-scan must show measurable P0/P1 reduction"
+      severity: "MUST"
+      enforcement: "semantic"
+      target: "verify_phase"
+      action: "deny"
+      parameters:
+        p0_expectation: "zero_or_documented_exception"
+        p1_threshold: "meaningful_reduction"
+        regression_allowed: false
+
+    - id: "verify_no_new_violations"
+      description: "Re-scan cannot introduce new governance violations"
+      severity: "MUST"
+      enforcement: "semantic"
+      target: "verify_phase"
+      action: "deny"
+      parameters:
+        new_violations_allowed: false
+
+    # ========== CROSS-PHASE ==========
+
+    - id: "all_decisions_receipted"
+      description: "Every human decision must be receipted"
+      severity: "MUST"
+      enforcement: "structural"
+      target: "all_phases"
+      action: "deny"
+      parameters:
+        receipt_required_for: ["ACCEPT", "MODIFY", "REJECT"]
+        receipt_must_include: ["authority", "timestamp", "rationale_or_acceptance"]
+
+    - id: "silence_equals_no_change"
+      description: "Lack of explicit decision means no remediation"
+      severity: "MUST"
+      enforcement: "structural"
+      target: "all_phases"
+      action: "deny"
+      parameters:
+        default_behavior: "skip_unapproved_changes"
+        implicit_approval: "not_allowed"
+
+    - id: "fail_closed_on_ambiguity"
+      description: "When policy intent is unclear, deny the change"
+      severity: "MUST"
+      enforcement: "semantic"
+      target: "all_phases"
+      action: "deny_if_ambiguous"
+      parameters:
+        ambiguity_resolution: "conservative"
+        escalation: "human_review_required"
+
+  # Logging & compliance
+  logging:
+    log_all_decisions: true
+    log_all_rejections: true
+    log_all_modifications: true
+    emit_receipt_for_each_decision: true
+
+  compliance:
+    fail_on_ambiguity: true
+    human_decision_required: true
+    draft_only: true                        # Default: no live repo writes unless explicitly authorized
+    require_audit_trail: true

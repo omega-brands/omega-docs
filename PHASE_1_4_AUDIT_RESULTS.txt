@@ -1,0 +1,178 @@
+================================================================================
+WF_DOCS_CATEGORIZATION_GOVERNANCE_v1 — PHASE 1-4 AUDIT RESULTS
+================================================================================
+
+Date: 2026-02-04
+Mode: Audit-Only (No Changes Applied)
+Status: AWAITING HUMAN DECISIONS
+
+================================================================================
+CLASSIFICATION RESULTS
+================================================================================
+
+Total Files Scanned:    763 markdown files across 4 repos
+  - omega-docs:          36 files
+  - omega-docs-internal: 723 files
+  - keon-docs:           7 files
+  - keon-docs-internal:  0 files (empty)
+
+Classification Decisions:
+  ALLOW (correctly placed):      140 files (18%)
+  MITIGATE (needs decision):     621 files (81%)
+  DENY (policy blocks):            2 files (0.3%)
+
+================================================================================
+KEY FINDINGS BY CATEGORY
+================================================================================
+
+1. GOVERNANCE DEFINITIONS IN WRONG REPO
+   Files: 419 (53% of mitigations)
+   Current: omega-docs (public)
+   Issue: Governance definitions should not be in public OMEGA repos
+   Target: keon-docs-internal (370) or keon-docs (57)
+   Examples:
+     - EXECUTION_READY_SUMMARY.md
+     - KEON_REMEDIATION_INDEX.md
+     - RUNBOOK_REMEDIATION_CYCLE_1.md
+     - docs/atlas/keon/** (governance docs)
+     - docs/atlas/ppp/** (kernel docs)
+
+2. TECHNICAL DOCS IN WRONG REPO
+   Files: 105 (17% of mitigations)
+   Current: omega-docs-internal (internal)
+   Issue: Technical/descriptive docs should be in public omega-docs
+   Target: omega-docs
+   Examples:
+     - bootstrap.md
+     - BrandGenie-OMEGA-Integration.md
+     - dual_mode_agent_readme.md
+     - docs/** (98 technical docs)
+
+3. GUARANTEE CLAIMS WITHOUT EVIDENCE
+   Files: 84 (13% of mitigations)
+   Current: omega-docs (public)
+   Issue: Public documents with guarantee claims need evidence pack
+   Target: omega-docs-internal (move) OR keep + add evidence
+   Examples:
+     - README.md
+     - docs/landing.md
+     - docs/atlas/documentation-complete.md
+     - docs/atlas/capabilities-index.md
+   Action: Move to internal OR add evidence pack
+
+4. MISPLACED GOVERNANCE IN KEON REPOS
+   Files: 12 (2% of mitigations)
+   Current: Wrong Keon repo
+   Issue: Draft governance in keon-docs; some content in omega-docs-internal
+   Target: keon-docs-internal (if draft) or keon-docs (if published)
+
+5. DRAFT CONTENT IN PUBLIC REPOS (DENIED BY POLICY)
+   Files: 2 (BLOCKED - cannot move without override)
+   Current: keon-docs, omega-docs-internal
+   Issue: Draft/experimental content violates fail-closed policy
+   Blocked: keon-docs/whitepaper/WHITEPAPER.md
+            omega-docs-internal/doctrine/CONVERSATIONAL_PANTHEON_ARCHITECTURE.md
+   Action: DECIDE what to do (move to internal, publish, or remove)
+
+================================================================================
+TARGET REPO DISTRIBUTION
+================================================================================
+
+Where documents want to move:
+  keon-docs-internal: 370 files (59% of moves)
+  keon-docs:         145 files (23% of moves)
+  omega-docs:        105 files (17% of moves)
+  omega-docs-internal: 1 file (0.2% of moves)
+
+================================================================================
+NEXT STEP: PROVIDE DECISIONS
+================================================================================
+
+You must decide for 621 MITIGATE findings what to do.
+
+Decision Format (JSON):
+{
+  "decisions": [
+    {
+      "document_id": "omega-docs/EXECUTION_READY_SUMMARY.md",
+      "decision_type": "ACCEPT|MODIFY|REJECT",
+      "authority": "Your Name",
+      "rationale": "Why this decision"
+    }
+  ]
+}
+
+Decision Types:
+  ACCEPT  - Approve the suggested target repo
+  MODIFY  - Different target or different action
+  REJECT  - Keep document where it is (requires rationale)
+
+Options to Provide Decisions:
+  1. All at once (621 decisions)
+  2. By batch (categories)
+  3. Auto-accept with manual exceptions
+  4. Conversational (one at a time or by discussion)
+
+Immutability Note:
+  Once recorded, ALL decisions become immutable audit trail.
+  This is intentional for governance accountability.
+
+================================================================================
+GOVERNANCE GUARANTEES
+================================================================================
+
+What Cannot Happen:
+  - Silent moves (every decision must be explicit)
+  - Unapproved changes (only accepted moves apply)
+  - Policy violations (2 DENY findings blocked)
+  - Unrationalized moves (rationale required)
+  - Unsigned decisions (authority required)
+
+What Is Guaranteed:
+  - Every decision receipted (immutable record)
+  - Every receipt hashed (deterministic)
+  - Every authority named (accountability)
+  - Every move verified (re-classification proof)
+  - Everything sealed (portable & auditable)
+
+================================================================================
+PHASE 5-6 EXECUTION (After Decisions)
+================================================================================
+
+Phase 5: Record Decisions
+  - Each decision becomes immutable HumanDecisionReceipt
+  - Policy validates each decision
+  - All decisions hashed and timestamped
+
+Phase 6: Seal Evidence Pack
+  - Bundle all 763 classification receipts
+  - Bundle all 621 decision receipts
+  - Create batch summary (your authority)
+  - Generate seal manifest (SHA256 hashes)
+  - Zip and seal final archive
+
+Output: Complete audit trail with proof of human accountability
+
+================================================================================
+DRIFT REPORT FILES
+================================================================================
+
+Full Report (JSON):
+  D:\Repos\omega-docs\EVIDENCE\docs-categorization\drift_report_2026-02-04T13-42-32.json
+
+Summary (Markdown):
+  D:\Repos\omega-docs\DRIFT_REPORT_SUMMARY.md
+
+This File:
+  D:\Repos\omega-docs\PHASE_1_4_AUDIT_RESULTS.txt
+
+================================================================================
+STATUS: AWAITING HUMAN DECISIONS
+================================================================================
+
+All 763 files classified.
+621 decisions required.
+No changes applied yet.
+Ready for your direction.
+
+Doctrine: "Meaning follows placement. Placement follows governance."

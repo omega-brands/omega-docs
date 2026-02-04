@@ -1,0 +1,101 @@
+{
+  "workflow_id": "wf-docs-tone-scan-2026-02-04T13-55-00_405492",
+  "phases": {
+    "collect": {
+      "phase": "collect",
+      "files_found": 29,
+      "files": [
+        "landing.md",
+        "architecture\\overview.md",
+        "atlas\\advanced-systems-reference.md",
+        "atlas\\capabilities-index.md",
+        "atlas\\collaboration-and-memory.md",
+        "atlas\\deliverables.md",
+        "atlas\\documentation-complete.md",
+        "atlas\\final-additions-summary.md",
+        "atlas\\functionality-list.md",
+        "atlas\\functionality-summary.md"
+      ],
+      "timestamp": "2026-02-04T13:55:00.430698"
+    },
+    "scan": {
+      "phase": "scan",
+      "files_scanned": 29,
+      "findings_detected": 101,
+      "timestamp": "2026-02-04T13:55:00.589069"
+    },
+    "classify": {
+      "phase": "classify",
+      "findings_by_type": {
+        "omission_drift": 77,
+        "ungoverned_autonomy": 22,
+        "anthropomorphic_framing": 2
+      },
+      "findings_by_severity": {
+        "P1": 79,
+        "P0": 22
+      },
+      "total_findings": 101,
+      "timestamp": "2026-02-04T13:55:00.597804"
+    },
+    "rewrite": {
+      "phase": "rewrite",
+      "rewrites_suggested": 7,
+      "vocabulary_canon_applied": [
+        "autonomous agent",
+        "self-evolving",
+        "automated execution",
+        "orchestrated",
+        "distributed system",
+        "intelligent"
+      ],
+      "timestamp": "2026-02-04T13:55:00.606635"
+    },
+    "verify": {
+      "phase": "verify",
+      "findings_evaluated": 101,
+      "findings_approved": 101,
+      "findings_rejected": 0,
+      "policy_enforced": "docs-governance-tone.yaml v1.0.0",
+      "timestamp": "2026-02-04T13:55:00.621472"
+    },
+    "emit_receipts": {
+      "phase": "emit_receipts",
+      "receipts_emitted": 101,
+      "summary_file": "D:\\Repos\\omega-docs\\EVIDENCE\\docs-governance-tone\\wf-docs-tone-scan-2026-02-04T13-55-00_405492\\summary.json",
+      "evidence_pack_hash": "D:\\Repos\\omega-docs\\EVIDENCE\\docs-governance-tone\\wf-docs-tone-scan-2026-02-04T13-55-00_405492\\wf-docs-tone-scan-2026-02-04T13-55-00_405492_sealed.zip",
+      "evidence_pack_location": "D:\\Repos\\omega-docs\\EVIDENCE\\docs-governance-tone\\wf-docs-tone-scan-2026-02-04T13-55-00_405492",
+      "summary": {
+        "workflow_id": "wf-docs-tone-scan-2026-02-04T13-55-00_405492",
+        "workflow_name": "WF_DOCS_GOVERNANCE_TONE_SCAN_v1",
+        "timestamp": "2026-02-04T13:55:00.676205",
+        "phases_executed": [
+          "collect",
+          "scan",
+          "classify",
+          "rewrite",
+          "verify",
+          "emit_receipts"
+        ],
+        "total_findings": 101,
+        "findings_by_severity": {
+          "P0": 22,
+          "P1": 79,
+          "P2": 0
+        },
+        "findings_by_type": {
+          "anthropomorphic_framing": 2,
+          "omission_drift": 77,
+          "ungoverned_autonomy": 22
+        },
+        "files_scanned": 29,
+        "policy_applied": "docs-governance-tone.yaml v1.0.0",
+        "doctrine": "Execution proposes. Governance decides. Receipts prove.",
+        "receipts_emitted": 101,
+        "receipts_file": "D:\\Repos\\omega-docs\\EVIDENCE\\docs-governance-tone\\wf-docs-tone-scan-2026-02-04T13-55-00_405492\\receipts.jsonl"
+      },
+      "timestamp": "2026-02-04T13:55:00.757009"
+    }
+  },
+  "status": "complete"
+}

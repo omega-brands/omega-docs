@@ -1,0 +1,41 @@
+{
+  "run_id": "wf-docs-tone-scan-2026-02-04T13-55-00_405492",
+  "timestamp": "2026-02-04T13:55:00.637176",
+  "total_receipts": 101,
+  "event_counts": {
+    "governance_finding_detected": 101
+  },
+  "status_counts": {
+    "approved": 101
+  },
+  "rule_triggers": {},
+  "metadata": {
+    "workflow_id": "wf-docs-tone-scan-2026-02-04T13-55-00_405492",
+    "workflow_name": "WF_DOCS_GOVERNANCE_TONE_SCAN_v1",
+    "timestamp": "2026-02-04T13:55:00.676205",
+    "phases_executed": [
+      "collect",
+      "scan",
+      "classify",
+      "rewrite",
+      "verify",
+      "emit_receipts"
+    ],
+    "total_findings": 101,
+    "findings_by_severity": {
+      "P0": 22,
+      "P1": 79,
+      "P2": 0
+    },
+    "findings_by_type": {
+      "anthropomorphic_framing": 2,
+      "omission_drift": 77,
+      "ungoverned_autonomy": 22
+    },
+    "files_scanned": 29,
+    "policy_applied": "docs-governance-tone.yaml v1.0.0",
+    "doctrine": "Execution proposes. Governance decides. Receipts prove.",
+    "receipts_emitted": 101,
+    "receipts_file": "D:\\Repos\\omega-docs\\EVIDENCE\\docs-governance-tone\\wf-docs-tone-scan-2026-02-04T13-55-00_405492\\receipts.jsonl"
+  }
+}

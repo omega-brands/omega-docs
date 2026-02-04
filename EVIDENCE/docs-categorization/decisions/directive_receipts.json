@@ -1,0 +1,197 @@
+[
+  {
+    "directive_id": "A",
+    "approved": true,
+    "decision_type": "ACCEPT",
+    "description": "Governance files from OMEGA-INTERNAL to KEON-INTERNAL",
+    "authority": "User",
+    "rationale": "Governance definitions must leave public OMEGA repos; belong in internal Keon governance tier",
+    "timestamp": "2026-02-04T19:42:02.942301",
+    "conditions": {
+      "source": "omega-docs-internal",
+      "target": "keon-docs-internal",
+      "reason": "Governance definitions belong in Keon repos"
+    },
+    "expected_files": 339
+  },
+  {
+    "directive_id": "B",
+    "approved": true,
+    "decision_type": "ACCEPT",
+    "description": "Technical documentation from OMEGA-INTERNAL to OMEGA-DOCS",
+    "authority": "User",
+    "rationale": "Technical/descriptive content belongs in public docs for discoverability",
+    "timestamp": "2026-02-04T19:42:02.942336",
+    "conditions": {
+      "source": "omega-docs-internal",
+      "target": "omega-docs",
+      "reason": "Document should be in omega-docs, currently in omega-docs-internal"
+    },
+    "expected_files": 105
+  },
+  {
+    "directive_id": "C",
+    "approved": true,
+    "decision_type": "MODIFY",
+    "description": "Guarantee claims (OMEGA-INTERNAL): demote language, keep internal",
+    "authority": "User",
+    "rationale": "Demote guarantee language to descriptive; keep in internal until evidence available",
+    "timestamp": "2026-02-04T19:42:02.942348",
+    "conditions": {
+      "source": "omega-docs-internal",
+      "action": "MARK-FOR-REMEDIATION",
+      "reason": "Guarantee claims must have associated evidence pack"
+    },
+    "expected_files": 75
+  },
+  {
+    "directive_id": "D",
+    "approved": false,
+    "decision_type": "REJECT",
+    "description": "Governance from OMEGA-INTERNAL to KEON-DOCS (REJECTED)",
+    "authority": "User",
+    "rationale": "Keep in OMEGA-INTERNAL; do not move to published KEON-DOCS",
+    "timestamp": "2026-02-04T19:42:02.942357",
+    "conditions": {
+      "source": "omega-docs-internal",
+      "action": "KEEP-IN-PLACE",
+      "reason": "Governance definitions belong in Keon repos"
+    },
+    "expected_files": 55
+  },
+  {
+    "directive_id": "E",
+    "approved": true,
+    "decision_type": "ACCEPT",
+    "description": "Governance from OMEGA-DOCS to KEON-INTERNAL",
+    "authority": "User",
+    "rationale": "Governance must leave public OMEGA repos",
+    "timestamp": "2026-02-04T19:42:02.942365",
+    "conditions": {
+      "source": "omega-docs",
+      "target": "keon-docs-internal",
+      "reason": "Governance definitions belong in Keon repos"
+    },
+    "expected_files": 19
+  },
+  {
+    "directive_id": "F",
+    "approved": true,
+    "decision_type": "ACCEPT",
+    "description": "Agent governance from OMEGA-INTERNAL to KEON-INTERNAL",
+    "authority": "User",
+    "rationale": "Agent/system governance belongs in Keon governance repos",
+    "timestamp": "2026-02-04T19:42:02.942372",
+    "conditions": {
+      "source": "omega-docs-internal",
+      "target": "keon-docs-internal",
+      "reason": "Document should be in keon-docs-internal, currently in omega-docs-internal"
+    },
+    "expected_files": 9
+  },
+  {
+    "directive_id": "G",
+    "approved": true,
+    "decision_type": "MODIFY",
+    "description": "Guarantee claims (OMEGA-DOCS): demote language, keep public",
+    "authority": "User",
+    "rationale": "Demote guarantee language to descriptive; keep in public docs with modified language",
+    "timestamp": "2026-02-04T19:42:02.942380",
+    "conditions": {
+      "source": "omega-docs",
+      "action": "MARK-FOR-REMEDIATION",
+      "reason": "Guarantee claims must have associated evidence pack"
+    },
+    "expected_files": 8
+  },
+  {
+    "directive_id": "H",
+    "approved": false,
+    "decision_type": "REJECT",
+    "description": "Governance from OMEGA-DOCS to KEON-DOCS (REJECTED)",
+    "authority": "User",
+    "rationale": "Keep in OMEGA-DOCS; do not move to published governance repo",
+    "timestamp": "2026-02-04T19:42:02.942391",
+    "conditions": {
+      "source": "omega-docs",
+      "action": "KEEP-IN-PLACE",
+      "reason": "Governance definitions belong in Keon repos"
+    },
+    "expected_files": 6
+  },
+  {
+    "directive_id": "I",
+    "approved": true,
+    "decision_type": "ACCEPT",
+    "description": "Draft governance from KEON-DOCS to KEON-INTERNAL",
+    "authority": "User",
+    "rationale": "Draft governance belongs in internal tier, not published",
+    "timestamp": "2026-02-04T19:42:02.942400",
+    "conditions": {
+      "source": "keon-docs",
+      "target": "keon-docs-internal",
+      "reason": "Document should be in keon-docs-internal, currently in keon-docs"
+    },
+    "expected_files": 3
+  },
+  {
+    "directive_id": "J",
+    "approved": true,
+    "decision_type": "ACCEPT",
+    "description": "Infrastructure doc from OMEGA-DOCS to OMEGA-INTERNAL",
+    "authority": "User",
+    "rationale": "Infrastructure documentation belongs in internal repos",
+    "timestamp": "2026-02-04T19:42:02.942407",
+    "conditions": {
+      "source": "omega-docs",
+      "target": "omega-docs-internal",
+      "reason": "Document should be in omega-docs-internal, currently in omega-docs"
+    },
+    "expected_files": 1
+  },
+  {
+    "directive_id": "K",
+    "approved": true,
+    "decision_type": "MODIFY",
+    "description": "Changelog guarantee claims: demote language, keep KEON-DOCS",
+    "authority": "User",
+    "rationale": "Demote guarantee language to descriptive; keep in published repo",
+    "timestamp": "2026-02-04T19:42:02.942414",
+    "conditions": {
+      "source": "keon-docs",
+      "action": "MARK-FOR-REMEDIATION",
+      "reason": "Guarantee claims must have associated evidence pack"
+    },
+    "expected_files": 1
+  },
+  {
+    "directive_id": "DENIAL-1",
+    "approved": true,
+    "decision_type": "RELOCATE-INTERNAL",
+    "description": "CONVERSATIONAL_PANTHEON_ARCHITECTURE.md policy override: move to internal",
+    "authority": "User",
+    "rationale": "Draft/experimental content policy override; relocate to internal (acceptable location)",
+    "timestamp": "2026-02-04T19:42:02.942421",
+    "conditions": {
+      "file": "omega-docs-internal/doctrine/CONVERSATIONAL_PANTHEON_ARCHITECTURE.md",
+      "action": "KEEP-IN-PLACE",
+      "note": "Already in internal; no movement needed. Policy block resolved."
+    },
+    "expected_files": 1
+  },
+  {
+    "directive_id": "DENIAL-2",
+    "approved": true,
+    "decision_type": "RELOCATE-INTERNAL",
+    "description": "WHITEPAPER.md policy override: move to internal",
+    "authority": "User",
+    "rationale": "Draft/experimental content policy override; relocate to internal from public",
+    "timestamp": "2026-02-04T19:42:02.942429",
+    "conditions": {
+      "source": "keon-docs",
+      "target": "keon-docs-internal",
+      "file": "keon-docs/whitepaper/WHITEPAPER.md"
+    },
+    "expected_files": 1
+  }
+]

@@ -1,0 +1,185 @@
+================================================================================
+HUMAN DECISION DIRECTIVES — QUICK REFERENCE
+================================================================================
+
+PHASE 1-4 AUDIT: COMPLETE (763 files classified)
+PHASE 5: AWAITING YOUR DIRECTIVE APPROVALS
+
+You provide 11 policy-level decisions. System applies deterministically to 623 files.
+
+================================================================================
+READY FOR APPROVAL (8 Directives — 614 files)
+================================================================================
+
+DIRECTIVE A: Governance from OMEGA-INTERNAL to KEON-INTERNAL
+  Files: 339
+  Reason: Governance definitions must leave OMEGA repos
+  Decision: YES / NO
+
+DIRECTIVE B: Technical Docs from OMEGA-INTERNAL to OMEGA-DOCS
+  Files: 105
+  Reason: Technical content belongs in public docs, not hidden in internal
+  Decision: YES / NO
+
+DIRECTIVE D: Governance from OMEGA-INTERNAL to KEON-DOCS
+  Files: 55
+  Reason: Published governance moves to published repo tier
+  Decision: YES / NO
+
+DIRECTIVE E: Governance from OMEGA-DOCS to KEON-DOCS-INTERNAL
+  Files: 19
+  Reason: Governance must leave public OMEGA repos
+  Decision: YES / NO
+
+DIRECTIVE F: Governance Refinement in OMEGA-INTERNAL to KEON-INTERNAL
+  Files: 9
+  Reason: Agent governance misplaced, must be in Keon repos
+  Decision: YES / NO
+
+DIRECTIVE H: Governance from OMEGA-DOCS to KEON-DOCS
+  Files: 6
+  Reason: Governance in public OMEGA must move to Keon
+  Decision: YES / NO
+
+DIRECTIVE I: Draft Governance from KEON-DOCS to KEON-DOCS-INTERNAL
+  Files: 3
+  Reason: Draft governance must move to draft tier
+  Decision: YES / NO
+
+DIRECTIVE J: Infrastructure from OMEGA-DOCS to OMEGA-DOCS-INTERNAL
+  Files: 1 (gateway-ingress.md)
+  Reason: Infrastructure docs belong internal, not public
+  Decision: YES / NO
+
+---
+SUBTOTAL: 614 files approved with 8 YES votes
+
+================================================================================
+DECISION REQUIRED (3 Directives — 9 files — Need Your Intent)
+================================================================================
+
+DIRECTIVE C: Guarantee Claims in OMEGA-INTERNAL (75 files)
+  Current: hidden in omega-docs-internal
+  Issue: Files make guarantee claims
+  Your Choice:
+    [A] ACCEPT-PUBLIC → Move to keon-docs (visible with governance context)
+    [B] ACCEPT-INTERNAL → Keep hidden in internal repo
+    [C] MODIFY-CLAIMS → Move to internal, demote guarantee language
+  Decision: [A] / [B] / [C]
+
+DIRECTIVE G: Guarantee Claims in OMEGA-DOCS (8 files)
+  Current: omega-docs (public)
+  Issue: Public docs making guarantee claims without evidence
+  Examples: README.md, landing.md, documentation-complete.md
+  Your Choice:
+    [A] ACCEPT-KEON → Move to keon-docs (governance context available)
+    [B] MODIFY-DEMOTE → Keep in omega-docs, remove guarantee language
+    [C] ACCEPT-OMEGA-PLUS-EVIDENCE → Keep in omega-docs, add evidence links
+  Decision: [A] / [B] / [C]
+
+DIRECTIVE K: Changelog Guarantee Claims in KEON-DOCS (1 file)
+  Current: keon-docs/whitepaper/CHANGELOG.md
+  Issue: Changelog makes guarantee claims
+  Your Choice:
+    [A] KEEP-WITH-EVIDENCE → Keep in keon-docs, add evidence links
+    [B] MODIFY-DEMOTE → Keep in keon-docs, demote guarantee language
+    [C] ACCEPT-INTERNAL → Move to keon-docs-internal
+  Decision: [A] / [B] / [C]
+
+---
+SUBTOTAL: 3 decision directives covering 84 files
+
+================================================================================
+POLICY DENIALS (2 files — BLOCKED — Need Override Decisions)
+================================================================================
+
+DENIAL 1: omega-docs-internal/doctrine/CONVERSATIONAL_PANTHEON_ARCHITECTURE.md
+  Status: BLOCKED by policy (draft/experimental content)
+  Your Override:
+    [1] KEEP-INTERNAL → Leave in internal (acceptable)
+    [2] PUBLISH-REMOVE-DRAFT → Move to keon-docs (remove draft status first)
+    [3] ARCHIVE → Mark as archived/deprecated
+  Decision: [1] / [2] / [3]
+
+DENIAL 2: keon-docs/whitepaper/WHITEPAPER.md
+  Status: BLOCKED by policy (draft content in public repo)
+  Your Override:
+    [1] MOVE-INTERNAL → Move to keon-docs-internal until finalized
+    [2] PUBLISH-FINALIZE → Keep in keon-docs (remove draft status)
+    [3] ARCHIVE → Mark as archived/deprecated
+  Decision: [1] / [2] / [3]
+
+---
+SUBTOTAL: 2 policy denials requiring explicit override
+
+================================================================================
+YOUR DECISION FORMAT
+================================================================================
+
+Simple text response:
+
+  DIRECTIVE A: YES
+  DIRECTIVE B: YES
+  DIRECTIVE C: [A]
+  DIRECTIVE D: YES
+  DIRECTIVE E: YES
+  DIRECTIVE F: YES
+  DIRECTIVE G: [B]
+  DIRECTIVE H: YES
+  DIRECTIVE I: YES
+  DIRECTIVE J: YES
+  DIRECTIVE K: [C]
+  DENIAL 1: [1]
+  DENIAL 2: [1]
+
+Or provide any clarifications/rationales you want recorded with your authority.
+
+================================================================================
+TOTAL COVERAGE
+================================================================================
+
+Directives A-J:    614 files (98% of all findings)
+Directives C,G,K:   84 files (decision-gated)
+Denials 1-2:         2 files (policy-blocked)
+ALLOW (no action):  140 files (already correct)
+                    ───────
+TOTAL:              763 files (100%)
+
+================================================================================
+WHAT HAPPENS NEXT
+================================================================================
+
+1. You provide directive approvals (text above)
+2. System creates HumanDecisionReceipt for each directive
+   - Directive ID
+   - Your authority
+   - Rationale
+   - Timestamp
+   - SHA256 hash
+3. System maps each of 623 files to its directive decision
+4. Phase 5-6 execute:
+   - Record all decisions as immutable receipts
+   - Re-classify files after moves (verification)
+   - Seal evidence pack (complete audit trail)
+5. Portable evidence delivered with full proof chain
+
+================================================================================
+GOVERNANCE GUARANTEES
+================================================================================
+
+✓ Human authority non-delegable
+✓ All decisions immutable
+✓ Every decision receipted & hashed
+✓ Policy compliance enforced
+✓ No silent moves
+✓ Complete audit trail
+✓ Sealed evidence portable
+
+================================================================================
+STATUS: AWAITING YOUR DIRECTIVE APPROVALS
+================================================================================
+
+Provide decisions above. Complete governance flow will execute deterministically
+from your policy-level directives to atomic file-level decisions.
+
+Doctrine: "Governance detects. Humans decide. Verification confirms. Receipts prove."

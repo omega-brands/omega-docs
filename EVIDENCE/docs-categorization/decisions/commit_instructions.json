@@ -1,0 +1,33 @@
+{
+  "keon-docs": {
+    "repository": "keon-docs",
+    "files_moved": 4,
+    "files_failed": 0,
+    "directives": [
+      "DENIAL-2",
+      "I"
+    ],
+    "commit_message": "docs: apply governance directives (directive-DENIAL-2, directive-I)\n\nExecute file movements authorized by human directives:\n  - DENIAL-2: 0 files\n  - I: 0 files\n\nTotal moves: 4\nPhase: 6-movement\nEvidence: decisions/movement_audit_log.jsonl"
+  },
+  "omega-docs": {
+    "repository": "omega-docs",
+    "files_moved": 20,
+    "files_failed": 0,
+    "directives": [
+      "E",
+      "J"
+    ],
+    "commit_message": "docs: apply governance directives (directive-E, directive-J)\n\nExecute file movements authorized by human directives:\n  - E: 0 files\n  - J: 0 files\n\nTotal moves: 20\nPhase: 6-movement\nEvidence: decisions/movement_audit_log.jsonl"
+  },
+  "omega-docs-internal": {
+    "repository": "omega-docs-internal",
+    "files_moved": 445,
+    "files_failed": 0,
+    "directives": [
+      "A",
+      "B",
+      "F"
+    ],
+    "commit_message": "docs: apply governance directives (directive-A, directive-B, directive-F)\n\nExecute file movements authorized by human directives:\n  - A: 0 files\n  - B: 0 files\n  - F: 0 files\n\nTotal moves: 445\nPhase: 6-movement\nEvidence: decisions/movement_audit_log.jsonl"
+  }
+}
