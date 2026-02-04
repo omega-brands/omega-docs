@@ -1,6 +1,7 @@
 """Progress tracking store for PPP runs."""
 
 import sqlite3
+import time
 from pathlib import Path
 from typing import Optional, Dict, Any
 from datetime import datetime
@@ -9,10 +10,34 @@ from datetime import datetime
 class ProgressStore:
     """SQLite-backed progress store for PPP runs."""
 
+    # Concurrency retry configuration
+    MAX_RETRIES = 5
+    INITIAL_BACKOFF = 0.1  # seconds
+    MAX_BACKOFF = 2.0  # seconds
+
     def __init__(self, db_path: str = "data/ppp_progress.db"):
         self.db_path = Path(db_path)
         self.db_path.parent.mkdir(parents=True, exist_ok=True)
         self._init_db()
+
+    def _execute_with_retry(self, func, *args, **kwargs):
+        """Execute a database operation with exponential backoff retry logic."""
+        last_error = None
+        backoff = self.INITIAL_BACKOFF
+
+        for attempt in range(self.MAX_RETRIES):
+            try:
+                return func(*args, **kwargs)
+            except sqlite3.OperationalError as e:
+                if "database is locked" in str(e):
+                    last_error = e
+                    if attempt < self.MAX_RETRIES - 1:
+                        time.sleep(backoff)
+                        backoff = min(backoff * 2, self.MAX_BACKOFF)
+                    continue
+                else:
+                    raise
+        raise last_error
 
     def _init_db(self):
         """Initialize database schema."""
@@ -66,8 +91,8 @@ class ProgressStore:
         policy_id: str,
         config_hash: str = None,
     ) -> bool:
-        """Begin a new run."""
-        try:
+        """Begin a new run with retry logic."""
+        def _insert():
             with sqlite3.connect(self.db_path) as conn:
                 cursor = conn.cursor()
                 cursor.execute("""
@@ -75,6 +100,9 @@ class ProgressStore:
                     VALUES (?, ?, ?, ?, ?, ?)
                 """, (run_id, agent_id, policy_id, datetime.utcnow().isoformat() + "Z", "in_progress", config_hash))
                 conn.commit()
+
+        try:
+            self._execute_with_retry(_insert)
             return True
         except sqlite3.IntegrityError:
             return False

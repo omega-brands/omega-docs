@@ -2,6 +2,8 @@
 
 import json
 import shutil
+import zipfile
+import hashlib
 from pathlib import Path
 from typing import List, Dict, Any
 from .schema import Receipt, CanonicalSerializer
@@ -123,5 +125,80 @@ class ReceiptEmitter:
         hashes_file = evidence_dir / "hashes.json"
         with open(hashes_file, 'w') as f:
             json.dump(hashes, f, indent=2)
-        
+
+        # Create seal manifest
+        self._create_seal_manifest(run_id, evidence_dir, hashes_file)
+
         return str(evidence_dir)
+
+    def _create_seal_manifest(self, run_id: str, evidence_dir: Path, hashes_file: Path) -> str:
+        """Create a seal manifest with integrity hashes for the evidence pack."""
+        manifest = {
+            "run_id": run_id,
+            "timestamp": None,  # Will be filled by sealer
+            "evidence_pack_hash": None,  # Will be filled after zipping
+            "contents": {
+                "receipts": self._file_hash(evidence_dir / "receipts.jsonl"),
+                "summary": self._file_hash(evidence_dir / "summary.json"),
+                "hashes_manifest": self._file_hash(hashes_file),
+                "policies": {},
+                "config": {},
+            }
+        }
+
+        # Hash all policy files
+        policies_dir = evidence_dir / "policies"
+        if policies_dir.exists():
+            for policy_file in policies_dir.glob("*.yaml"):
+                manifest["contents"]["policies"][policy_file.name] = self._file_hash(policy_file)
+
+        # Hash all config files
+        config_dir = evidence_dir / "run-config"
+        if config_dir.exists():
+            for config_file in config_dir.glob("*.yaml"):
+                manifest["contents"]["config"][config_file.name] = self._file_hash(config_file)
+
+        manifest_file = evidence_dir / "seal-manifest.json"
+        with open(manifest_file, 'w') as f:
+            json.dump(manifest, f, indent=2)
+
+        return str(manifest_file)
+
+    @staticmethod
+    def _file_hash(file_path: Path) -> str:
+        """Compute SHA256 hash of a file."""
+        if not file_path.exists():
+            return None
+        sha256 = hashlib.sha256()
+        with open(file_path, 'rb') as f:
+            for chunk in iter(lambda: f.read(4096), b''):
+                sha256.update(chunk)
+        return sha256.hexdigest()
+
+    def seal_evidence_pack(self, run_id: str) -> str:
+        """Seal and zip the evidence pack, return path to sealed archive."""
+        evidence_dir = self.report_root / run_id / "evidence-pack"
+        if not evidence_dir.exists():
+            raise ValueError(f"Evidence pack not found: {evidence_dir}")
+
+        # Create zip archive
+        zip_path = self.report_root / run_id / f"{run_id}_sealed.zip"
+        with zipfile.ZipFile(zip_path, 'w', zipfile.ZIP_DEFLATED) as zf:
+            for file_path in evidence_dir.rglob('*'):
+                if file_path.is_file():
+                    arcname = file_path.relative_to(evidence_dir.parent)
+                    zf.write(file_path, arcname)
+
+        # Compute zip hash
+        zip_hash = self._file_hash(zip_path)
+
+        # Update seal manifest
+        seal_manifest_file = evidence_dir / "seal-manifest.json"
+        if seal_manifest_file.exists():
+            with open(seal_manifest_file, 'r') as f:
+                manifest = json.load(f)
+            manifest["evidence_pack_hash"] = zip_hash
+            with open(seal_manifest_file, 'w') as f:
+                json.dump(manifest, f, indent=2)
+
+        return str(zip_path)

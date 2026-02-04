@@ -45,14 +45,22 @@ class CanonicalSerializer:
         """Normalize a value for canonical serialization."""
         if isinstance(value, dict):
             # Sort keys and normalize values
-            return {k: CanonicalSerializer._normalize_value(value[k]) 
+            return {k: CanonicalSerializer._normalize_value(value[k])
                     for k in sorted(value.keys())}
         elif isinstance(value, list):
             # Normalize list items but preserve order (don't sort)
             return [CanonicalSerializer._normalize_value(item) for item in value]
         elif isinstance(value, float):
-            # Normalize floats to avoid precision issues
-            return round(value, 10) if value % 1 != 0 else int(value)
+            # Store floats as fixed-precision strings to avoid cross-platform drift
+            # Format: multiply by 1,000,000 to avoid scientific notation for small numbers
+            if value == 0.0:
+                return "0.0"
+            elif value % 1 == 0:
+                # Whole number: store as string representation
+                return f"{int(value)}.0"
+            else:
+                # Fractional: store with 15 decimal places (IEEE 754 precision)
+                return "{:.15f}".format(value).rstrip('0')
         elif isinstance(value, bool):
             # Ensure booleans are lowercase
             return value

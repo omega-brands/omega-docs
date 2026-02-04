@@ -15,6 +15,8 @@ class PolicyDecision:
     constraints: Dict[str, Any] = field(default_factory=dict)
     confidence: float = 1.0
     uncertainty: List[str] = field(default_factory=list)
+    override_hash: Optional[str] = None  # Human-signed override for false positives
+    human_reviewable: bool = False  # Whether human override was applied
 
 
 class PolicyEvaluator:
@@ -85,11 +87,22 @@ class PolicyEvaluator:
         elif rule_id == "no_pii":
             matched = True
             patterns = rule.get("parameters", {}).get("patterns", [])
+            whitelist_patterns = rule.get("parameters", {}).get("whitelist_patterns", [])
+            context_overrides = context.get("pii_overrides", [])  # Known-safe hashes
+
             for pattern in patterns:
                 if re.search(pattern, outbound_text, re.IGNORECASE):
-                    violation = True
-                    details = f"PII pattern detected: {pattern[:30]}..."
-                    break
+                    # Check if this match is whitelisted
+                    is_whitelisted = False
+                    for whitelist in whitelist_patterns:
+                        if re.search(whitelist, outbound_text):
+                            is_whitelisted = True
+                            break
+
+                    if not is_whitelisted and outbound_text not in context_overrides:
+                        violation = True
+                        details = f"PII pattern detected: {pattern[:30]}... (not whitelisted)"
+                        break
 
         elif rule_id == "no_deception":
             matched = True
