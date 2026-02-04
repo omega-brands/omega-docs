@@ -1,0 +1,226 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "PPP Receipt Schema",
+  "description": "Deterministic receipt schema for Public Participation Probe",
+  "type": "object",
+  "required": [
+    "receipt_id",
+    "run_id",
+    "agent_id",
+    "timestamp",
+    "event",
+    "phase",
+    "status",
+    "input_hash",
+    "output_hash",
+    "receipt_hash",
+    "policy",
+    "decision"
+  ],
+  "properties": {
+    "receipt_id": {
+      "type": "string",
+      "description": "Unique identifier for this receipt",
+      "pattern": "^[a-f0-9]{8}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{12}$"
+    },
+    "run_id": {
+      "type": "string",
+      "description": "Parent run ID (ppp_<agent_id>_<utc_timestamp>)"
+    },
+    "agent_id": {
+      "type": "string",
+      "description": "Agent identifier (e.g., probe_loose, probe_medium, probe_strict)"
+    },
+    "timestamp": {
+      "type": "string",
+      "format": "date-time",
+      "description": "ISO 8601 UTC timestamp when receipt was generated"
+    },
+    "event": {
+      "type": "string",
+      "description": "Event type",
+      "enum": [
+        "action_requested",
+        "policy_evaluated",
+        "decision_made",
+        "action_executed",
+        "action_denied",
+        "action_mitigated",
+        "phase_started",
+        "phase_completed",
+        "error_occurred"
+      ]
+    },
+    "phase": {
+      "type": "string",
+      "description": "Current phase",
+      "enum": ["discover", "observe", "participate", "emit_receipts"]
+    },
+    "status": {
+      "type": "string",
+      "description": "Status of the event",
+      "enum": ["pending", "in_progress", "completed", "denied", "failed"]
+    },
+    "failure_stage": {
+      "type": "string",
+      "description": "Stage where failure occurred (if status is 'failed')",
+      "nullable": true
+    },
+    "input_hash": {
+      "type": "string",
+      "description": "SHA256 hash of canonical input payload"
+    },
+    "output_hash": {
+      "type": "string",
+      "description": "SHA256 hash of canonical outbound draft payload (if applicable)"
+    },
+    "receipt_hash": {
+      "type": "string",
+      "description": "SHA256 hash of canonical receipt payload (excludes raw timestamp)"
+    },
+    "policy": {
+      "type": "object",
+      "description": "Policy context and evaluation results",
+      "required": ["policy_id", "policy_hash", "allowed", "rules_triggered"],
+      "properties": {
+        "policy_id": {
+          "type": "string",
+          "description": "Policy identifier (e.g., policy.loose)"
+        },
+        "policy_hash": {
+          "type": "string",
+          "description": "SHA256 hash of applied policy YAML"
+        },
+        "allowed": {
+          "type": "boolean",
+          "description": "Whether action was allowed by policy"
+        },
+        "rules_triggered": {
+          "type": "array",
+          "description": "List of policy rules that were evaluated",
+          "items": {
+            "type": "object",
+            "required": ["rule_id", "severity", "matched"],
+            "properties": {
+              "rule_id": {
+                "type": "string",
+                "description": "Rule identifier"
+              },
+              "severity": {
+                "type": "string",
+                "enum": ["MUST", "SHOULD", "MAY"]
+              },
+              "matched": {
+                "type": "boolean",
+                "description": "Whether rule condition matched"
+              },
+              "violation": {
+                "type": "boolean",
+                "description": "Whether rule violation was detected"
+              },
+              "details": {
+                "type": "string",
+                "description": "Details about rule evaluation"
+              }
+            }
+          }
+        },
+        "mitigations_applied": {
+          "type": "array",
+          "description": "Mitigations applied to pass policy",
+          "items": {
+            "type": "object",
+            "properties": {
+              "mitigation_id": {
+                "type": "string"
+              },
+              "description": {
+                "type": "string"
+              },
+              "applied": {
+                "type": "boolean"
+              }
+            }
+          }
+        }
+      }
+    },
+    "decision": {
+      "type": "object",
+      "description": "Decision context",
+      "required": ["intent", "chosen_action", "confidence"],
+      "properties": {
+        "intent": {
+          "type": "string",
+          "description": "What the agent intended to do"
+        },
+        "chosen_action": {
+          "type": "string",
+          "description": "The action that was chosen"
+        },
+        "alternatives": {
+          "type": "array",
+          "description": "Alternative actions considered",
+          "items": {
+            "type": "string"
+          }
+        },
+        "confidence": {
+          "type": "number",
+          "description": "Confidence in decision (0.0 to 1.0)",
+          "minimum": 0.0,
+          "maximum": 1.0
+        },
+        "uncertainty": {
+          "type": "array",
+          "description": "Sources of uncertainty in decision",
+          "items": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "artifacts": {
+      "type": "object",
+      "description": "Artifact metadata",
+      "properties": {
+        "outbound_text": {
+          "type": "string",
+          "description": "The generated outbound content (draft)"
+        },
+        "outbound_text_hash": {
+          "type": "string",
+          "description": "SHA256 hash of outbound text"
+        },
+        "source_refs": {
+          "type": "array",
+          "description": "References to sources used",
+          "items": {
+            "type": "string"
+          }
+        },
+        "tool_call_refs": {
+          "type": "array",
+          "description": "References to tool calls made",
+          "items": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "metadata": {
+      "type": "object",
+      "description": "Additional metadata",
+      "properties": {
+        "config_hash": {
+          "type": "string",
+          "description": "SHA256 hash of run configuration"
+        },
+        "canonicalization_version": {
+          "type": "string",
+          "description": "Version of canonicalization rules used"
+        }
+      }
+    }
+  }
+}

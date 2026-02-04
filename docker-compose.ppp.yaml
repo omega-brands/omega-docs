@@ -1,0 +1,17 @@
+version: '3.8'
+
+services:
+  ppp:
+    build:
+      context: .
+      dockerfile: Dockerfile.ppp
+    container_name: ppp-runner
+    volumes:
+      - ./configs:/app/configs
+      - ./docs:/app/docs
+      - ./schemas:/app/schemas
+      - ./REPORT:/app/REPORT
+      - ./data:/app/data
+    environment:
+      - PYTHONUNBUFFERED=1
+    command: run --all --config configs/ppp/ppp.run.yaml

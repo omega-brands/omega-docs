@@ -1,0 +1,20 @@
+FROM python:3.11-slim
+
+WORKDIR /app
+
+# Install dependencies
+COPY requirements-ppp.txt .
+RUN pip install --no-cache-dir -r requirements-ppp.txt
+
+# Copy source
+COPY src ./src
+COPY configs ./configs
+COPY docs ./docs
+COPY schemas ./schemas
+
+# Create data directory
+RUN mkdir -p data
+
+# Set entry point
+ENTRYPOINT ["python", "-m", "ppp.main"]
+CMD ["run", "--all", "--config", "configs/ppp/ppp.run.yaml"]
