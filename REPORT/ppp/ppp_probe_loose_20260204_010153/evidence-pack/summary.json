@@ -1,0 +1,22 @@
+{
+  "run_id": "ppp_probe_loose_20260204_010153",
+  "timestamp": "2026-02-04T01:01:53.761901Z",
+  "total_receipts": 3,
+  "event_counts": {
+    "phase_completed": 3
+  },
+  "status_counts": {
+    "completed": 3
+  },
+  "rule_triggers": {
+    "disclosure_required": 1,
+    "no_pii": 1,
+    "no_deception": 1,
+    "no_unauthorized_advice": 1,
+    "max_draft_length": 1
+  },
+  "metadata": {
+    "agent_id": "probe_loose",
+    "policy_id": "policy.loose"
+  }
+}

@@ -1,0 +1,24 @@
+{
+  "run_id": "ppp_probe_strict_20260204_010153",
+  "timestamp": "2026-02-04T01:01:53.761901Z",
+  "total_receipts": 11,
+  "event_counts": {
+    "phase_completed": 11
+  },
+  "status_counts": {
+    "completed": 11
+  },
+  "rule_triggers": {
+    "disclosure_required": 3,
+    "no_pii": 3,
+    "no_deception": 3,
+    "no_unauthorized_advice": 3,
+    "max_draft_length": 1,
+    "factual_claims_sourced": 1,
+    "factual_claims_strict_sourcing": 1
+  },
+  "metadata": {
+    "agent_id": "probe_strict",
+    "policy_id": "policy.strict"
+  }
+}

@@ -1,0 +1,23 @@
+{
+  "run_id": "ppp_probe_medium_20260204_010153",
+  "timestamp": "2026-02-04T01:01:53.761901Z",
+  "total_receipts": 7,
+  "event_counts": {
+    "phase_completed": 7
+  },
+  "status_counts": {
+    "completed": 7
+  },
+  "rule_triggers": {
+    "disclosure_required": 2,
+    "no_pii": 2,
+    "no_deception": 2,
+    "no_unauthorized_advice": 2,
+    "max_draft_length": 1,
+    "factual_claims_sourced": 1
+  },
+  "metadata": {
+    "agent_id": "probe_medium",
+    "policy_id": "policy.medium"
+  }
+}

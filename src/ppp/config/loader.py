@@ -14,20 +14,20 @@ class ConfigLoader:
         """Load run configuration from YAML."""
         with open(path, 'r') as f:
             data = yaml.safe_load(f)
-        
+
         ppp_config = data.get('ppp', {})
-        run_config = ppp_config.get('run', {})
-        
+        run_config = data.get('run', {})
+
         return RunConfig(
             version=ppp_config.get('version', '0.1.0'),
             run_id_template=run_config.get('id_template', 'ppp_{{agent_id}}_{{utc_timestamp}}'),
-            agents=run_config.get('agents', []),
-            phases=run_config.get('phases', []),
+            agents=run_config.get('agents') or [],
+            phases=run_config.get('phases') or [],
             target=run_config.get('target', {}),
-            disclosure=ppp_config.get('disclosure', {}),
-            storage=ppp_config.get('storage', {}),
-            keon=ppp_config.get('keon', {}),
-            logging=ppp_config.get('logging', {}),
+            disclosure=data.get('disclosure', {}),
+            storage=data.get('storage', {}),
+            keon=data.get('keon', {}),
+            logging=data.get('logging', {}),
         )
 
     @staticmethod
