@@ -1,0 +1,17 @@
+{
+  "sealed_timestamp": "2026-02-05T00:32:18.406253",
+  "authority": "User",
+  "directives_approved": [
+    "C",
+    "G",
+    "K"
+  ],
+  "files_approved": 84,
+  "evidence_files": [],
+  "verification_instructions": [
+    "1. Download all files from EVIDENCE/language-remediation/",
+    "2. Compute SHA256 hash for each file",
+    "3. Compare against file_hashes in this manifest",
+    "4. All hashes must match to verify evidence integrity"
+  ]
+}

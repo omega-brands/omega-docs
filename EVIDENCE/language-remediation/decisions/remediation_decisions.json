@@ -1,0 +1,28 @@
+{
+  "decision_id": "phase5-remediation-2026-02-05T00-35-00Z",
+  "remediation_decisions": [
+    {
+      "directive_id": "C",
+      "decision_type": "APPROVE_BATCH",
+      "files_approved": 75,
+      "rationale": "Approved. Demote guarantee language to descriptive form for all files under Directive C. Placement remains unchanged."
+    },
+    {
+      "directive_id": "G",
+      "decision_type": "APPROVE_BATCH",
+      "files_approved": 8,
+      "rationale": "Approved. Demote guarantee language to descriptive form for all public-facing files under Directive G to eliminate unsupported claims."
+    },
+    {
+      "directive_id": "K",
+      "decision_type": "APPROVE_BATCH",
+      "files_approved": 1,
+      "rationale": "Approved. Demote changelog guarantee language to descriptive form under Directive K. No placement changes authorized."
+    }
+  ],
+  "authority": "User",
+  "timestamp": "2026-02-05T00:35:00Z",
+  "decision_hash": "immutable_receipt",
+  "total_files_approved": 84,
+  "approval_status": "APPROVED"
+}

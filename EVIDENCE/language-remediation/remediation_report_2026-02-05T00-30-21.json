@@ -1,0 +1,50 @@
+{
+  "report_id": "remediation-report-2026-02-05T00-30-21",
+  "phase": "4-drift-report",
+  "scope": "REMEDIATION_TASK_MANIFEST.md",
+  "directives_covered": [
+    "C",
+    "G",
+    "K"
+  ],
+  "files_total": 84,
+  "files_proceeding": 0,
+  "files_requiring_review": 0,
+  "files_blocked": 0,
+  "files_per_directive": {
+    "C": {
+      "total": 75,
+      "proceeding": 0,
+      "review": 0,
+      "block": 0
+    },
+    "G": {
+      "total": 8,
+      "proceeding": 0,
+      "review": 0,
+      "block": 0
+    },
+    "K": {
+      "total": 1,
+      "proceeding": 0,
+      "review": 0,
+      "block": 0
+    }
+  },
+  "sample_changes": [],
+  "authority": "User",
+  "timestamp": "2026-02-05T00:30:21.160396",
+  "fail_closed_principles": [
+    "Any claim confidence <0.70 blocks automatic remediation; requires explicit human override",
+    "Ambiguous language defaults to REVIEW state (human gate required)",
+    "No silent changes; all modifications traced to directive + confidence score",
+    "Placement is frozen; only language affected, no file moves or renames",
+    "Complete before/after audit trail required for all changes"
+  ],
+  "confidence_thresholds": {
+    "proceed_auto_approve": 0.95,
+    "review_human_required": 0.7,
+    "block_explicit_override": 0.7,
+    "explanation": "Fail-closed on ambiguity: <0.70 blocks auto-remediation, 0.70-0.94 requires human review, 0.95+ auto-approvable"
+  }
+}

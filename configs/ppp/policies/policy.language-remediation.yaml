@@ -1,0 +1,122 @@
+policy:
+  id: language-remediation-policy
+  version: 1.0.0
+  status: canonical
+  scope: markdown_documentation_language_remediation
+  enforcement_mode: fail_closed
+  created_timestamp: "2026-02-04T00:00:00Z"
+  authority: User
+  source_directives:
+    - C
+    - G
+    - K
+
+directives:
+  C:
+    description: "Demote guarantee language in OMEGA-INTERNAL files"
+    target_repo: omega-docs-internal
+    scope_description: "Internal operational documentation"
+    file_count: 75
+    placement_frozen: true
+    rules:
+      - pattern: '\bguarantees?\b'
+        replacement: "provides"
+        replacement_confidence: 0.95
+        context: "strong guarantee claims"
+      - pattern: '\bensures?\b'
+        replacement: "provides"
+        replacement_confidence: 0.90
+        context: "guarantee phrasing"
+      - pattern: '\bprevents?\b'
+        replacement: "helps prevent"
+        replacement_confidence: 0.90
+        context: "prevention claims"
+      - pattern: '\benforces?\b'
+        replacement: "enforces policies for"
+        replacement_confidence: 0.95
+        context: "enforcement claims"
+      - pattern: '\bcomplete\b'
+        replacement: "covers core functionality"
+        replacement_confidence: 0.85
+        context: "completeness claims"
+      - pattern: '\bimmutable\b'
+        replacement: "maintains immutability properties"
+        replacement_confidence: 0.90
+        context: "immutability guarantees"
+
+  G:
+    description: "Demote guarantee language in OMEGA-DOCS public files"
+    target_repo: omega-docs
+    scope_description: "Public operational documentation (safety-critical)"
+    file_count: 8
+    placement_frozen: true
+    public_safety: true
+    rules:
+      - pattern: '\bguarantees?\b'
+        replacement: "provides"
+        replacement_confidence: 0.95
+        context: "guarantee claims in public docs"
+      - pattern: '\bensures?\b'
+        replacement: "provides"
+        replacement_confidence: 0.90
+        context: "guarantee phrasing in public"
+      - pattern: '\bcomplete\b'
+        replacement: "covers key features"
+        replacement_confidence: 0.85
+        context: "completeness in public docs"
+      - pattern: '\bfully?\s+documented\b'
+        replacement: "documented"
+        replacement_confidence: 0.80
+        context: "documentation claims"
+
+  K:
+    description: "Demote guarantee language in KEON-DOCS changelog"
+    target_repo: keon-docs
+    scope_description: "Published governance changelog (separate aspiration from fact)"
+    file_count: 1
+    placement_frozen: true
+    rules:
+      - pattern: '\bguarantees?\s+backward\b'
+        replacement: "maintains backward"
+        replacement_confidence: 0.95
+        context: "backward compatibility claims"
+      - pattern: '\benforces?\b'
+        replacement: "documents"
+        replacement_confidence: 0.90
+        context: "enforcement in changelog"
+      - pattern: '\bensures?\b'
+        replacement: "provides"
+        replacement_confidence: 0.90
+        context: "guarantee claims in changelog"
+
+confidence_thresholds:
+  proceed_auto_approve: 0.95
+  review_human_required: 0.70
+  block_explicit_override: 0.70
+  explanation: "Fail-closed on ambiguity: <0.70 blocks auto-remediation, 0.70-0.94 requires human review, 0.95+ auto-approvable"
+
+fail_closed_principles:
+  - "Any claim confidence <0.70 blocks automatic remediation; requires explicit human override"
+  - "Ambiguous language defaults to REVIEW state (human gate required)"
+  - "No silent changes; all modifications traced to directive + confidence score"
+  - "Placement is frozen; only language affected, no file moves or renames"
+  - "Complete before/after audit trail required for all changes"
+
+evidence_requirements:
+  - "RemediationReceipt per file with file_hash_pre + file_hash_post"
+  - "Before/after diff for all changes"
+  - "Confidence score for each suggestion"
+  - "Directive linkage to original classification receipt"
+  - "Authority attribution (User, non-delegable)"
+  - "Sealed evidence pack with SHA256 manifest"
+
+policy_decision_types:
+  PROCEED: "High confidence (0.95+) — auto-approvable at Phase 5 gate"
+  REVIEW: "Medium confidence (0.70-0.94) — requires human review at Phase 5 gate"
+  BLOCK: "Low confidence (<0.70) — blocks change, requires explicit override"
+
+audit_trail:
+  - "All changes linked to original directive (C, G, K)"
+  - "All changes linked to classification receipt from Phase 4 categorization"
+  - "RemediationReceipt immutable + hashed"
+  - "Complete provenance chain: classification → placement → remediation"
