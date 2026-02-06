@@ -1,0 +1,75 @@
+
+≡ƒö▒ PT-003 Agent Registry & Capability Routing Proof (C#)
+   Mode: STRICT
+   Capability: llm.generate_response
+   Timestamp: 2026-02-06T18:07:25.5958570Z
+   FC Endpoint: http://omega-federation-core-prod:9405
+   Run ID: 277c308c-a8f5-44e0-b90d-0f2b122f40f4
+
+≡ƒôè Step 1: Query Registry Status
+   Total Servers: 3
+   Active Servers: 3
+   Stale Servers: 0
+
+≡ƒöì Step 2: Discover Agents for Capability
+   Found 2 agents
+   - llm_server_1: score=0.98
+   - llm_server_2: score=0.92
+
+≡ƒÜÇ Step 3: Submit Routing Request
+   Run ID: 277c308c-a8f5-44e0-b90d-0f2b122f40f4
+   Selected Agent: llm_server_1
+   Confidence: 0.98
+   Rationale: Selected llm_server_1 based on strict policy mode
+
+≡ƒôï JSON Output:
+{
+  "timestamp": "2026-02-06T18:07:25.5958570Z",
+  "mode": "strict",
+  "capability": "llm.generate_response",
+  "registry_status": {
+    "total_servers": 3,
+    "active_servers": 3,
+    "stale_servers": 0,
+    "timestamp": "2026-02-06T18:07:25.5958570Z"
+  },
+  "discovered_agents": {
+    "agents": [
+      {
+        "agent_id": "llm_server_1",
+        "capability": "llm.generate_response",
+        "confidence_score": 0.98,
+        "performance_metrics": {
+          "latency_ms": 45,
+          "success_rate": 0.99
+        }
+      },
+      {
+        "agent_id": "llm_server_2",
+        "capability": "llm.generate_response",
+        "confidence_score": 0.92,
+        "performance_metrics": {
+          "latency_ms": 52,
+          "success_rate": 0.98
+        }
+      }
+    ],
+    "total": 2
+  },
+  "routing_result": {
+    "agent_id": "llm_server_1",
+    "capability": "llm.generate_response",
+    "confidence_score": 0.98,
+    "reasoning": "Selected llm_server_1 based on strict policy mode",
+    "registry_snapshot": {
+      "total_eligible": 2,
+      "evaluated": 2,
+      "selected": "llm_server_1"
+    },
+    "run_id": "277c308c-a8f5-44e0-b90d-0f2b122f40f4",
+    "policy_mode": "strict",
+    "timestamp": "2026-02-06T18:07:25.5958570Z"
+  }
+}
+
+Γ£à PT-003 Proof Complete

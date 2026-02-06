@@ -1,0 +1,75 @@
+
+≡ƒö▒ PT-003 Agent Registry & Capability Routing Proof (C#)
+   Mode: LOOSE
+   Capability: llm.generate_response
+   Timestamp: 2026-02-06T18:06:38.1697572Z
+   FC Endpoint: http://omega-federation-core-prod:9405
+   Run ID: 960d2763-bb4b-438c-99c8-8a19af9dd63b
+
+≡ƒôè Step 1: Query Registry Status
+   Total Servers: 3
+   Active Servers: 3
+   Stale Servers: 0
+
+≡ƒöì Step 2: Discover Agents for Capability
+   Found 2 agents
+   - llm_server_1: score=0.95
+   - llm_server_2: score=0.87
+
+≡ƒÜÇ Step 3: Submit Routing Request
+   Run ID: 960d2763-bb4b-438c-99c8-8a19af9dd63b
+   Selected Agent: llm_server_1
+   Confidence: 0.95
+   Rationale: Selected llm_server_1 based on loose policy mode
+
+≡ƒôï JSON Output:
+{
+  "timestamp": "2026-02-06T18:06:38.1697572Z",
+  "mode": "loose",
+  "capability": "llm.generate_response",
+  "registry_status": {
+    "total_servers": 3,
+    "active_servers": 3,
+    "stale_servers": 0,
+    "timestamp": "2026-02-06T18:06:38.1697572Z"
+  },
+  "discovered_agents": {
+    "agents": [
+      {
+        "agent_id": "llm_server_1",
+        "capability": "llm.generate_response",
+        "confidence_score": 0.95,
+        "performance_metrics": {
+          "latency_ms": 45,
+          "success_rate": 0.99
+        }
+      },
+      {
+        "agent_id": "llm_server_2",
+        "capability": "llm.generate_response",
+        "confidence_score": 0.87,
+        "performance_metrics": {
+          "latency_ms": 52,
+          "success_rate": 0.98
+        }
+      }
+    ],
+    "total": 2
+  },
+  "routing_result": {
+    "agent_id": "llm_server_1",
+    "capability": "llm.generate_response",
+    "confidence_score": 0.95,
+    "reasoning": "Selected llm_server_1 based on loose policy mode",
+    "registry_snapshot": {
+      "total_eligible": 2,
+      "evaluated": 2,
+      "selected": "llm_server_1"
+    },
+    "run_id": "960d2763-bb4b-438c-99c8-8a19af9dd63b",
+    "policy_mode": "loose",
+    "timestamp": "2026-02-06T18:06:38.1697572Z"
+  }
+}
+
+Γ£à PT-003 Proof Complete
