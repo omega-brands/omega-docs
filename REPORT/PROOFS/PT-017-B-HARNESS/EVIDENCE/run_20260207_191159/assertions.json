@@ -1,0 +1,39 @@
+{
+  "scenario_1": {
+    "trigger": "verify-fail",
+    "result": "REVOCATION_RECOMMENDED",
+    "policy_version": "1.0.0",
+    "automation": true,
+    "status": "PASSED"
+  },
+  "scenario_2": {
+    "trigger": "post-death-action",
+    "result": "REVOCATION_INITIATED",
+    "severity": "auto-terminate",
+    "automation": true,
+    "status": "PASSED"
+  },
+  "scenario_3": {
+    "trigger": "invalid-manifest",
+    "result": "REVOCATION_RECOMMENDED",
+    "has_trigger_events": true,
+    "status": "PASSED"
+  },
+  "scenario_4": {
+    "trigger": "drift",
+    "result": "REVOCATION_RECOMMENDED",
+    "cooldown_enforced": true,
+    "status": "PASSED"
+  },
+  "scenario_5": {
+    "trigger": "lifecycle-event",
+    "result": "REVOCATION_RECOMMENDED",
+    "human_gate_required": true,
+    "status": "PASSED"
+  },
+  "scenario_6": {
+    "fail_closed_cases": 4,
+    "all_returned_no_action": true,
+    "status": "PASSED"
+  }
+}
