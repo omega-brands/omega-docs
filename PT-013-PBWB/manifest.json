@@ -1,0 +1,220 @@
+{
+  "manifest_version": "1.0.0",
+  "generated_at": "2026-02-07T13:43:04.834186+00:00",
+  "rhid_count": 25,
+  "rhids": {
+    "rhid:receipt:038a2879-030e-4355-b37b-713326e83851": {
+      "kind": "receipt",
+      "action_id": "11d3fa32-1f33-4719-8cc8-e61d8b4b1f88",
+      "run_id": "bea9e0e1-989c-4e54-84c4-48cdec9a577d",
+      "actor_id": "claude_titan",
+      "action_type": "execute",
+      "created_at": "2026-02-07T13:43:03.298749+00:00",
+      "sha256": "30a7c05f936bc33672e8b0c066fc731e15cfdf272be5828516f440fe4d8d22e0"
+    },
+    "rhid:artifact:abc4b7e5-3b74-4456-a0b6-743b3b33afa8": {
+      "kind": "artifact",
+      "action_id": "11d3fa32-1f33-4719-8cc8-e61d8b4b1f88",
+      "run_id": "bea9e0e1-989c-4e54-84c4-48cdec9a577d",
+      "created_by": "claude_titan",
+      "created_at": "2026-02-07T13:43:03.298771+00:00",
+      "sha256": "39f10366323c079811dc6b529b35df02904c559243bda0f3b0a1ad1532a55632"
+    },
+    "rhid:receipt:ede61fb5-a830-4661-a671-1376e1ef7199": {
+      "kind": "receipt",
+      "action_id": "4a4f8d9e-4548-4207-81f2-d3e0ced2d911",
+      "run_id": "bea9e0e1-989c-4e54-84c4-48cdec9a577d",
+      "actor_id": "gemini_titan",
+      "action_type": "execute",
+      "created_at": "2026-02-07T13:43:03.299019+00:00",
+      "sha256": "0941c8158797dfb1ccf30065e63685e542984aaefb26678108a13e87f10f421d"
+    },
+    "rhid:artifact:987ed21b-aacc-4a73-957b-9c9ff9637b3f": {
+      "kind": "artifact",
+      "action_id": "4a4f8d9e-4548-4207-81f2-d3e0ced2d911",
+      "run_id": "bea9e0e1-989c-4e54-84c4-48cdec9a577d",
+      "created_by": "gemini_titan",
+      "created_at": "2026-02-07T13:43:03.299035+00:00",
+      "sha256": "f10858dc1478a203b04a1cdac12c277f9043690cc1878ec472e9b693eb8b4b4c"
+    },
+    "rhid:receipt:556c774f-83f7-49a4-9665-4d06d9dd8cbf": {
+      "kind": "receipt",
+      "action_id": "8b26b274-4665-45c2-8bcb-a802e9b0fb14",
+      "run_id": "bea9e0e1-989c-4e54-84c4-48cdec9a577d",
+      "actor_id": "gpt_titan",
+      "action_type": "execute",
+      "created_at": "2026-02-07T13:43:03.299316+00:00",
+      "sha256": "9b06685f43386707ea17e63ea9104fd2f9af7fae5c85ae796df4781702c1afee"
+    },
+    "rhid:artifact:88a249ab-4a05-49e5-aa1c-2ce049df4f7c": {
+      "kind": "artifact",
+      "action_id": "8b26b274-4665-45c2-8bcb-a802e9b0fb14",
+      "run_id": "bea9e0e1-989c-4e54-84c4-48cdec9a577d",
+      "created_by": "gpt_titan",
+      "created_at": "2026-02-07T13:43:03.299330+00:00",
+      "sha256": "ce58cf63e1970f12c6fdd99d7dfa9f4288fb0c05a2d4462c044fbd5e71157166"
+    },
+    "rhid:receipt:a01ea374-f9d5-4b28-adf0-614eae5f64b3": {
+      "kind": "receipt",
+      "action_id": "33106f6e-986f-4384-8970-58a852616d5a",
+      "run_id": "bea9e0e1-989c-4e54-84c4-48cdec9a577d",
+      "actor_id": "grok_titan",
+      "action_type": "execute",
+      "created_at": "2026-02-07T13:43:03.299562+00:00",
+      "sha256": "3fe88a1007415611cbd92e7a0b3ff05cd1c9ed21dce7c2be6a399097a2d27ad5"
+    },
+    "rhid:artifact:32ded169-61e5-47da-8d92-402a9571ceb2": {
+      "kind": "artifact",
+      "action_id": "33106f6e-986f-4384-8970-58a852616d5a",
+      "run_id": "bea9e0e1-989c-4e54-84c4-48cdec9a577d",
+      "created_by": "grok_titan",
+      "created_at": "2026-02-07T13:43:03.299576+00:00",
+      "sha256": "8e9c0c9136700796a80b7b2b103eeec99eac18d983aeab7188270488e4a051a2"
+    },
+    "rhid:receipt:d450901d-0193-4f75-9e0e-fa373f788572": {
+      "kind": "receipt",
+      "action_id": "56c3a5b0-56c5-46ac-9c41-b5caeba357f4",
+      "run_id": "bea9e0e1-989c-4e54-84c4-48cdec9a577d",
+      "actor_id": "federation_core",
+      "action_type": "gate_request",
+      "created_at": "2026-02-07T13:43:03.343700+00:00",
+      "sha256": "9ceea2763ed0f284cb55fad9eaad951b2378eda923a9a52686fadb0154fa9e4e"
+    },
+    "rhid:gate:ac5ece73-8bcc-4a67-ab57-6e527e559005": {
+      "kind": "gate",
+      "action_id": "56c3a5b0-56c5-46ac-9c41-b5caeba357f4",
+      "run_id": "bea9e0e1-989c-4e54-84c4-48cdec9a577d",
+      "created_by": "federation_core",
+      "created_at": "2026-02-07T13:43:03.343718+00:00",
+      "sha256": "697b22f97f9f859b52395555b377b178cc1a3098de96a40c954b1033706c76fd"
+    },
+    "rhid:receipt:a92aab7a-4eca-4254-afc4-5b4ddaeaf4e8": {
+      "kind": "receipt",
+      "action_id": "0001b170-ca9a-4917-a31d-d02178c7bf59",
+      "run_id": "bea9e0e1-989c-4e54-84c4-48cdec9a577d",
+      "actor_id": "approver_1",
+      "action_type": "gate_resolve",
+      "created_at": "2026-02-07T13:43:03.913139+00:00",
+      "sha256": "3df0145fb3fe31ca763df19c1755cb3582ed66e957a98765a41fa11aea597b4a"
+    },
+    "rhid:receipt:462802a0-4ca9-4639-8cde-75b1829d23e8": {
+      "kind": "receipt",
+      "action_id": "0001b170-ca9a-4917-a31d-d02178c7bf59",
+      "run_id": "bea9e0e1-989c-4e54-84c4-48cdec9a577d",
+      "created_by": "approver_1",
+      "created_at": "2026-02-07T13:43:03.913157+00:00",
+      "sha256": "db9cd4a9cd42b344d00d0411f768fd0f95beadbcd40672308a32c2b9c03b600b"
+    },
+    "rhid:receipt:bdfed951-931e-4bc6-80a0-1b92aea95fb7": {
+      "kind": "receipt",
+      "action_id": "417be3e3-009f-4362-9758-612a02dabce0",
+      "run_id": "bea9e0e1-989c-4e54-84c4-48cdec9a577d",
+      "actor_id": "federation_core",
+      "action_type": "seal",
+      "created_at": "2026-02-07T13:43:03.952643+00:00",
+      "sha256": "762f2054263b7ff0eb6e22a56c08869127ddbafaeabe098722a2842ad7ea70df"
+    },
+    "rhid:artifact:635f9a2f-2eb1-4534-8c3b-139512dbdc5d": {
+      "kind": "artifact",
+      "action_id": "417be3e3-009f-4362-9758-612a02dabce0",
+      "run_id": "bea9e0e1-989c-4e54-84c4-48cdec9a577d",
+      "created_by": "federation_core",
+      "created_at": "2026-02-07T13:43:03.952667+00:00",
+      "sha256": "ef37ed4e44e684c698ccd6ed8bb64f1a7dd5d1bc8ca583fdc2078cfe87f787cf"
+    },
+    "rhid:receipt:5ac4ffc9-1dcb-4fee-a40b-4ae82ab0a3f1": {
+      "kind": "receipt",
+      "action_id": "261dd57e-2356-4546-b504-f400ef0ea128",
+      "run_id": "f57650b0-1efd-44f2-b344-d2eb44ddf031",
+      "actor_id": "claude_titan",
+      "action_type": "execute",
+      "created_at": "2026-02-07T13:43:04.022394+00:00",
+      "sha256": "f1b3b5ef51508b7927cc7c49b457a1bafcbaaa632c2b52ab6f2a5cfb0cf6ba56"
+    },
+    "rhid:artifact:bcb2c785-3aa6-4b0a-a66b-f2f357964a7a": {
+      "kind": "artifact",
+      "action_id": "261dd57e-2356-4546-b504-f400ef0ea128",
+      "run_id": "f57650b0-1efd-44f2-b344-d2eb44ddf031",
+      "created_by": "claude_titan",
+      "created_at": "2026-02-07T13:43:04.022413+00:00",
+      "sha256": "19312c8d32e0b237fe806bbd3714a901adfbeacb4d18a5e6c5fd17a8fcdb42d0"
+    },
+    "rhid:receipt:fbeb4710-8e75-46cb-abbe-a7b9f4a3a75d": {
+      "kind": "receipt",
+      "action_id": "dcabbe48-3c10-4c77-9114-3583c6cb65de",
+      "run_id": "f57650b0-1efd-44f2-b344-d2eb44ddf031",
+      "actor_id": "gemini_titan",
+      "action_type": "execute",
+      "created_at": "2026-02-07T13:43:04.022577+00:00",
+      "sha256": "ade1276b4e045f6afae6a7f97804d6e226d686904a06ef397340ac4e166e91b0"
+    },
+    "rhid:artifact:affd9159-83c5-485f-8a94-fe07f2213e7f": {
+      "kind": "artifact",
+      "action_id": "dcabbe48-3c10-4c77-9114-3583c6cb65de",
+      "run_id": "f57650b0-1efd-44f2-b344-d2eb44ddf031",
+      "created_by": "gemini_titan",
+      "created_at": "2026-02-07T13:43:04.022588+00:00",
+      "sha256": "acab35e4fd3097aea25cf65214fe310d9cb592e3efb0221cc0091a200df49b23"
+    },
+    "rhid:receipt:006d1472-24ae-4ae6-8e9d-65203395dafe": {
+      "kind": "receipt",
+      "action_id": "b7e942fc-db48-46fe-82e9-c026346c69ef",
+      "run_id": "f57650b0-1efd-44f2-b344-d2eb44ddf031",
+      "actor_id": "federation_core",
+      "action_type": "gate_request",
+      "created_at": "2026-02-07T13:43:04.070798+00:00",
+      "sha256": "703e1a97ad7c2c836084761ef33d5327aa5fd474640b2944b7aaf8207cd08f0c"
+    },
+    "rhid:gate:283ba05c-294c-4d21-a4e0-119b14e108ec": {
+      "kind": "gate",
+      "action_id": "b7e942fc-db48-46fe-82e9-c026346c69ef",
+      "run_id": "f57650b0-1efd-44f2-b344-d2eb44ddf031",
+      "created_by": "federation_core",
+      "created_at": "2026-02-07T13:43:04.071058+00:00",
+      "sha256": "ba34aac6a51b9cb9563b84e94847396e0661f67a30796e5b3b98adcd5692f2b3"
+    },
+    "rhid:receipt:6b72a352-c9de-434c-8eef-38b4fffa7195": {
+      "kind": "receipt",
+      "action_id": "fae5f150-ee80-4e65-b85d-1df369abcf7e",
+      "run_id": "f57650b0-1efd-44f2-b344-d2eb44ddf031",
+      "actor_id": "approver_1",
+      "action_type": "gate_resolve",
+      "created_at": "2026-02-07T13:43:04.700166+00:00",
+      "sha256": "1af5159750d0a5f018468edb12cec6201ee0b73b0f9f17829c4b27210b05bbec"
+    },
+    "rhid:receipt:42bb5ea6-7eb2-4d4f-8a76-2465cfe1adee": {
+      "kind": "receipt",
+      "action_id": "fae5f150-ee80-4e65-b85d-1df369abcf7e",
+      "run_id": "f57650b0-1efd-44f2-b344-d2eb44ddf031",
+      "created_by": "approver_1",
+      "created_at": "2026-02-07T13:43:04.700203+00:00",
+      "sha256": "79604062434577a63a08bf6bd5dd19a121cd5079b85326c31f0c0a8759ea4d53"
+    },
+    "rhid:receipt:469c81c2-daeb-4ac7-a029-06a112ccf213": {
+      "kind": "receipt",
+      "action_id": "53f8549d-913a-4001-a447-9ebceac0c2c8",
+      "run_id": "3cf293c9-f704-4a42-b701-7cd3dd09a2f5",
+      "actor_id": "claude_titan",
+      "action_type": "execute",
+      "created_at": "2026-02-07T13:43:04.828806+00:00",
+      "sha256": "9e123ea1aa561fe1f5f1a27fd86ddb212552bd96bbf090bc32eecd641078c44f"
+    },
+    "rhid:artifact:6fc0f2a3-5688-4dcf-816f-3a8692918678": {
+      "kind": "artifact",
+      "action_id": "53f8549d-913a-4001-a447-9ebceac0c2c8",
+      "run_id": "3cf293c9-f704-4a42-b701-7cd3dd09a2f5",
+      "created_by": "claude_titan",
+      "created_at": "2026-02-07T13:43:04.828906+00:00",
+      "sha256": "c7cea46e6361a2cf175a6ecef3721619cf50768be736d80854fadf0131ca69b4"
+    },
+    "rhid:receipt:6b921d6e-b3da-4c6d-b5bb-1321fe62a87e": {
+      "kind": "receipt",
+      "action_id": "7d3a1e3e-9085-4e34-9817-d159d514f17c",
+      "run_id": "3cf293c9-f704-4a42-b701-7cd3dd09a2f5",
+      "actor_id": "gemini_titan",
+      "action_type": "execute",
+      "created_at": "2026-02-07T13:43:04.829453+00:00",
+      "sha256": "03117b6d543974d29279a658fde2b46d84a131164ba36a280cff193d5fc69f70"
+    }
+  }
+}
