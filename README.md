@@ -30,24 +30,29 @@ Routing, execution, memory, workflow coordination, extensibility, and agent coll
 
 ## Omega Core (Entity Lifecycle Governance)
 
-OMEGA’s core enforces the lifecycle of autonomous digital entities with explicit authority and receipt-backed finality.
+OMEGA’s core enforces the **complete lifecycle** of autonomous digital entities — from creation through termination — with explicit authority, receipt-backed finality, and policy-driven automation.
 
-- **Core Capability**
-  - Governs the full lifecycle of autonomous digital entities
-  - Creation to Termination
-  - Verifiable human and system authority
-  - Constitutional Infrastructure
-- **Lifecycle Enforcement**
+- **Governed Birth** (PT-014 — Proven)
+  - Entity creation requires explicit human or system authority
+  - Receipt-bound birth events with fail-closed semantics
+  - No entity exists without a governed genesis record
+- **Governed Death** (PT-016 — Proven)
+  - Revocation and termination produce immutable lineage
   - No death without birth (prevents phantom entities)
   - No double-death (prevents state corruption)
-  - Two death modes (policy vs system authority)
-  - Receipt chaining across existence
-  - Enforced runtime finality
-- **Architectural Verdict**
-  - Allows machines to act automatically
-  - But always proves why
-  - Under whose authority
-  - With what limits
+  - Two death modes: policy revocation vs system termination
+  - Receipt chains link birth → death with no gaps
+- **Governed Automation** (PT-017 — Proven)
+  - Policies can trigger automatic revocation or termination
+  - Severity gradation: RECOMMEND → AUTO_REVOKE → AUTO_TERMINATE
+  - Human gate enforcement for irreversible actions
+  - Cooldown periods prevent policy flapping
+  - Full attribution: policy ID, version, automation flag, trigger events
+  - Fail-closed: ambiguous cases default to NO_ACTION
+- **Constitutional Guarantee**
+  - Machines may act automatically — but always prove why, under whose authority, and with what limits
+  - Every automated action is attributable, auditable, and reversible up to the point of execution
+  - Receipt chains survive forensic reconstruction months or years later
 
 ---
 
@@ -87,6 +92,33 @@ A modular system composed of agents, execution engines, routing layers, memory s
 
 ---
 
+## User Interfaces
+
+OMEGA exposes execution through a deliberately constrained user interface called the **Workshop**.
+
+The Workshop allows users to:
+- discover workflows
+- initiate governed execution
+- observe run state and governance interruptions
+
+It does **not** make decisions or render evidence.
+
+- [Workshop UI (Execution Surface)](docs/ui/workshop-ui.md)
+- [Governed Execution Diagram](docs/ui/governed-execution-diagram.md)
+- [Auditor Walkthrough](docs/ui/auditor-walkthrough.md)
+- [Why Not Open Source (Yet)](docs/ui/why-not-open-source.md)
+- [Separation of Powers](docs/ui/separation-of-powers.md)
+
+---
+
+## Comparison
+
+How does governed execution differ from conventional agent platforms? This framework evaluates systems on architecture, not claims.
+
+- [Governed Systems vs. Conventional Agent Platforms](docs/comparison/governed-vs-agentic.md)
+
+---
+
 ## Getting Started
 
 OMEGA can be adopted incrementally, from local execution to governed multi-tenant workflows. [Quick start guide](docs/getting-started/quick-start.md)
@@ -105,9 +137,29 @@ Restraint, clarity, credibility, and correctness over novelty and unchecked auto
 
 ---
 
+## Proof Campaigns (What's Proven)
+
+Every claim in OMEGA is backed by a sealed, tagged, independently verifiable proof campaign. These are not demos — they are **immutable evidence bundles** with SHA256-hashed manifests.
+
+| Campaign | What It Proves | Status |
+|----------|---------------|--------|
+| **PT-003** | Agent Registry & Capability Routing | ✅ Proven |
+| **PT-004** | Workflow Orchestration Execution Spine | ✅ Proven |
+| **PT-005** | Explicit GATE_REQUIRED Ergonomics (Human-in-the-Loop) | ✅ Proven |
+| **PT-013** | Multi-Titan Collaboration under FC Governance | ✅ Proven |
+| **PT-014** | Genesis under Human-Governed Execution (Birth) | ✅ Proven |
+| **PT-016** | Governed Revocation & Death Semantics (Death) | ✅ Proven |
+| **PT-017** | Revocation Policy Automation (Automated Governance) | ✅ Proven |
+
+> **Birth, Death, and Automation are all governed, attributed, and provable.**
+
+Full proof artifacts, harness code, and evidence bundles: [OMEGA Proof Campaign Status](https://github.com/m0r6aN/omega-docs/blob/main/REPORT/PROOFS/PROOF_CAMPAIGN_STATUS.md)
+
+---
+
 ## Status and Maturity
 
-An actively developed, production-tested system with real operational use cases. [Documentation status](docs/atlas/documentation-complete.md)
+An actively developed, production-tested system with **7 sealed proof campaigns** covering the full governance lifecycle. [Documentation status](docs/atlas/documentation-complete.md)
 
 ---
 
