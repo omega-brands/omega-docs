@@ -84,14 +84,16 @@
 
 ## 🚀 WHAT PT-013 UNLOCKS
 
-### Immediate
-- **PT-014:** Genesis spawning with human-governed birth events
+### Immediate (Now Proven)
+- ✅ **PT-014:** Genesis spawning with human-governed birth events (PROVEN)
+- ✅ **PT-016:** Governed revocation & death semantics (PROVEN)
 - **UI Legitimacy:** Courtroom UI becomes provable, not decorative
 
 ### Strategic
 - **Multi-Agent Workflows:** Proven safe collaboration model
 - **Human Governance:** First-class, ergonomic, auditable
 - **Compliance:** Audit trails prove human oversight
+- **Lifecycle Governance:** Birth and death events are governed and receipted
 
 ---
 
@@ -108,7 +110,8 @@ PT-013 is the third proof in the Keon Pantheon sequence:
 1. ✅ **PT-004** - Workflow Orchestration Execution Spine
 2. ✅ **PT-005** - Explicit GATE_REQUIRED Ergonomics
 3. ✅ **PT-013** - Multi-Titan Collaboration (THIS PROOF)
-4. 🔜 **PT-014** - Genesis Spawning with Human Governance
+4. ✅ **PT-014** - Genesis Spawning with Human Governance (PROVEN)
+5. ✅ **PT-016** - Governed Revocation & Death Semantics (PROVEN)
 
 ---
 
