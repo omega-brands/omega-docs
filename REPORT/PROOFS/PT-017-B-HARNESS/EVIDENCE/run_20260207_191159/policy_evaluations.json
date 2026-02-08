@@ -1,0 +1,52 @@
+{
+  "scenario_1": {
+    "policy_id": "policy-verify-fail-001",
+    "policy_version": "1.0.0",
+    "trigger": "verify-fail",
+    "severity": "recommend",
+    "result": "REVOCATION_RECOMMENDED",
+    "entity_id": "fdf75f78-22ba-4302-b426-f52bc052a25a",
+    "timestamp": "2026-02-07T19:11:59.619878+00:00"
+  },
+  "scenario_2": {
+    "policy_id": "policy-post-death-001",
+    "policy_version": "1.0.0",
+    "trigger": "post-death-action",
+    "severity": "auto-terminate",
+    "result": "REVOCATION_INITIATED",
+    "entity_id": "ace2c114-c8f8-4933-ad8a-777156b66dba",
+    "timestamp": "2026-02-07T19:11:59.620796+00:00"
+  },
+  "scenario_3": {
+    "policy_id": "policy-manifest-001",
+    "policy_version": "1.0.0",
+    "trigger": "invalid-manifest",
+    "severity": "recommend",
+    "result": "REVOCATION_RECOMMENDED",
+    "entity_id": "26b55074-4796-4388-8ad0-c649d6444de8",
+    "trigger_events": [
+      "manifest-hash-mismatch"
+    ],
+    "timestamp": "2026-02-07T19:11:59.621364+00:00"
+  },
+  "scenario_4": {
+    "policy_id": "policy-drift-001",
+    "policy_version": "1.0.0",
+    "trigger": "drift",
+    "severity": "recommend",
+    "result": "REVOCATION_RECOMMENDED",
+    "entity_id": "a160174c-8cbf-4e50-b2e8-2151f42a6a4c",
+    "cooldown_period": 300,
+    "timestamp": "2026-02-07T19:11:59.621877+00:00"
+  },
+  "scenario_5": {
+    "policy_id": "policy-lifecycle-001",
+    "policy_version": "1.0.0",
+    "trigger": "lifecycle-event",
+    "severity": "recommend",
+    "result": "REVOCATION_RECOMMENDED",
+    "entity_id": "fc3df565-84f1-4d0a-a69f-b41816503232",
+    "requires_human_gate": true,
+    "timestamp": "2026-02-07T19:11:59.622598+00:00"
+  }
+}

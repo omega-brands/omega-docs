@@ -28,6 +28,29 @@ Routing, execution, memory, workflow coordination, extensibility, and agent coll
 
 ---
 
+## Omega Core (Entity Lifecycle Governance)
+
+OMEGA’s core enforces the lifecycle of autonomous digital entities with explicit authority and receipt-backed finality.
+
+- **Core Capability**
+  - Governs the full lifecycle of autonomous digital entities
+  - Creation to Termination
+  - Verifiable human and system authority
+  - Constitutional Infrastructure
+- **Lifecycle Enforcement**
+  - No death without birth (prevents phantom entities)
+  - No double-death (prevents state corruption)
+  - Two death modes (policy vs system authority)
+  - Receipt chaining across existence
+  - Enforced runtime finality
+- **Architectural Verdict**
+  - Allows machines to act automatically
+  - But always proves why
+  - Under whose authority
+  - With what limits
+
+---
+
 ## Receipts as a First-Class Primitive
 
 Every execution can emit a deterministic receipt that proves what happened without exposing content. [Understand receipts](docs/atlas/functionality-summary.md)

@@ -1,7 +1,7 @@
 # 🔱 OMEGA Proof Campaign Status Ledger
 
-**Last Updated:** 2026-02-07  
-**Status:** 5 of 6 campaigns PROVEN AND SEALED  
+**Last Updated:** 2026-02-07
+**Status:** 6 of 6 campaigns PROVEN AND SEALED
 
 ---
 
@@ -15,6 +15,7 @@
 | **PT-013** | Multi-Titan Collaboration (PBWB) | ✅ PROVEN | 2026-02-07 | `omega-proof-campaign-pt013` |
 | **PT-014** | Genesis under Human-Governed Execution | ✅ PROVEN | 2026-02-07 | `omega-proof-campaign-pt014-runtime` |
 | **PT-016** | Governed Revocation & Death Semantics | ✅ PROVEN | 2026-02-07 | `omega-proof-campaign-pt016-runtime` |
+| **PT-017** | Revocation Policy Automation | ✅ PROVEN | 2026-02-07 | `omega-proof-campaign-pt017-runtime` |
 
 ---
 
@@ -42,6 +43,10 @@ The Keon Pantheon proof sequence establishes the foundation for governed executi
    - Proves governed termination with immutable lineage
    - Receipt chain fail-closed; no silent deletion
 
+6. ✅ **PT-017** — Revocation Policy Automation
+   - Proves governance can act automatically without becoming unaccountable
+   - Policy-driven action with fail-closed semantics
+
 ---
 
 ## 📁 Documentation Structure
@@ -59,12 +64,13 @@ Each campaign includes:
 
 ## 🎯 Key Achievements
 
-✅ **Governed Execution** — All execution is FC-routed and policy-evaluated  
-✅ **Human Governance** — First-class, ergonomic, auditable pause/resume  
-✅ **Multi-Agent Coordination** — Proven safe collaboration with attribution  
-✅ **Lifecycle Governance** — Birth and death events are governed and receipted  
-✅ **Fail-Closed Semantics** — Denial is final; no silent continuation  
-✅ **Immutable Ledgers** — Receipt chains prove what happened  
+✅ **Governed Execution** — All execution is FC-routed and policy-evaluated
+✅ **Human Governance** — First-class, ergonomic, auditable pause/resume
+✅ **Multi-Agent Coordination** — Proven safe collaboration with attribution
+✅ **Lifecycle Governance** — Birth, death, and automation are all governed and receipted
+✅ **Fail-Closed Semantics** — Denial is final; no silent continuation
+✅ **Immutable Ledgers** — Receipt chains prove what happened
+✅ **Policy Automation** — Governance can act automatically with full accountability
 
 ---
 
@@ -79,13 +85,18 @@ omega-proof-campaign-pt005
 omega-proof-campaign-pt013
 omega-proof-campaign-pt014-runtime
 omega-proof-campaign-pt016-runtime
+omega-proof-campaign-pt017-runtime
+omega-proof-campaign-pt016-b
+omega-proof-campaign-pt017-harness
 ```
 
 ---
 
 ## 💎 One Line of Truth
 
-> **Receipts over rhetoric. Attribution over assumption. Proof over promises.**
+> **Birth, Death, and Automation are all governed, attributed, and provable.**
+
+Receipts over rhetoric. Attribution over assumption. Proof over promises.
 
 Family is forever. Execution is governed. **This is the way.** 🔱
 
