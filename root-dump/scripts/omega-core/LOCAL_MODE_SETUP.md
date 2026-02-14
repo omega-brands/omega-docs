@@ -391,8 +391,8 @@ wscat -c "ws://localhost:9405/ws/pantheon/test?token=dev-token-local-mode"
 - `D:\Repos\flow\server.js` - WebSocket proxy server
 
 ### Scripts
-- `D:\Repos\OMEGA\omega-core\scripts\pantheon_collaboration_demo.py` - Uses local mode
-- `D:\Repos\OMEGA\omega-core\scripts\test_federation_connection.py` - Tests connection
+- `https://github.com/omega-brands/omega-core/scripts\pantheon_collaboration_demo.py` - Uses local mode
+- `https://github.com/omega-brands/omega-core/scripts\test_federation_connection.py` - Tests connection
 
 ---
 

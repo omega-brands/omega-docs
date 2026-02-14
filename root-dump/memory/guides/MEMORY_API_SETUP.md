@@ -62,7 +62,7 @@ docker-compose up -d memory-api qdrant mongodb
 
 ```powershell
 # Navigate to memory shards directory
-cd D:\Repos\OMEGA\omega-core\memory\shards
+cd https://github.com/omega-brands/omega-core/memory\shards
 
 # Start the service
 python start_local.py

@@ -13,7 +13,7 @@ Two game-changing systems are now fully integrated into omega-core:
 ### 1. **Thread Persistence System** (`thread/`)
 Persistent conversation management with Redis backend and HMAC security.
 
-**Location**: `D:\Repos\OMEGA\omega-core\thread\`
+**Location**: `https://github.com/omega-brands/omega-core/thread/`
 
 **Key Files**:
 - `redis_thread_store.py` - Core implementation
@@ -31,7 +31,7 @@ Persistent conversation management with Redis backend and HMAC security.
 ### 2. **Workflow Checkpoint System** (`workflows/`)
 Save/restore workflow state for long-running processes.
 
-**Location**: `D:\Repos\OMEGA\omega-core\workflows\workflow_checkpoint_system.py`
+**Location**: `https://github.com/omega-brands/omega-core/workflows\workflow_checkpoint_system.py`
 
 **Features**:
 - ✅ Save/restore workflow state at any point

@@ -9,7 +9,7 @@
 ### 1. Start Everything
 
 ```bash
-cd D:\Repos\OMEGA\omega-core\memory\shards
+cd https://github.com/omega-brands/omega-core/memory\shards
 docker-compose up -d
 ```
 
@@ -78,7 +78,7 @@ docker run -p 27017:27017 mongo:6
 ### 2. Start Memory API
 
 ```bash
-cd D:\Repos\OMEGA\omega-core\memory\shards
+cd https://github.com/omega-brands/omega-core/memory\shards
 python start_local.py
 ```
 

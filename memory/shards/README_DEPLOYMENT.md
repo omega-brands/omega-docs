@@ -12,7 +12,7 @@ The Memory API is a dedicated FastAPI service that provides tenant-isolated memo
 ### 1. Start all services (Qdrant + MongoDB + Memory API)
 
 ```bash
-cd D:\Repos\OMEGA\omega-core\memory\shards
+cd https://github.com/omega-brands/omega-core/memory\shards
 docker-compose up -d
 ```
 
@@ -85,7 +85,7 @@ If you want to run the Memory API locally without Docker:
 ### Start the Memory API
 
 ```bash
-cd D:\Repos\OMEGA\omega-core\memory\shards
+cd https://github.com/omega-brands/omega-core/memory\shards
 python start_local.py
 ```
 

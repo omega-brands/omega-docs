@@ -169,7 +169,7 @@ Your approvals reinforce repo tier semantics:
 ## EVIDENCE PACK CONTENTS
 
 ### Location
-`D:\Repos\omega-docs\EVIDENCE\docs-categorization\decisions\`
+`D:\Repos\omega-docs\EVIDENCE\docs-categorization\decisions/`
 
 ### Files Generated
 

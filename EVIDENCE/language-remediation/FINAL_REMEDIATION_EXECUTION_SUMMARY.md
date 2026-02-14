@@ -265,6 +265,6 @@ Repository: keon-docs
 
 ---
 
-**Evidence Location:** `D:\Repos\omega-docs\EVIDENCE\language-remediation\`
+**Evidence Location:** `D:\Repos\omega-docs\EVIDENCE\language-remediation/`
 
 **No remote push executed.** (Local commits only, per authorization.)

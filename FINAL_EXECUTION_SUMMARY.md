@@ -133,7 +133,7 @@ All 469 moved files now have ALLOW status. Governance directives correctly appli
 
 **Final Evidence Pack Created:**
 
-**Location:** `D:\Repos\omega-docs\EVIDENCE\docs-categorization\`
+**Location:** `D:\Repos\omega-docs\EVIDENCE\docs-categorization/`
 
 **Contents (Hashed for Integrity Verification):**
 
