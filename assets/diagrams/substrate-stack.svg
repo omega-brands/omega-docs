@@ -1,0 +1,82 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 600" width="800" height="600">
+  <defs>
+    <style>
+      .layer-box { fill: #1a1a2e; stroke: #16c79a; stroke-width: 2; }
+      .keon-layer { fill: #0f3460; stroke: #16c79a; stroke-width: 3; }
+      .omega-layer { fill: #16213e; stroke: #00d9ff; stroke-width: 2.5; }
+      .app-box { fill: #1a1a2e; stroke: #e94560; stroke-width: 2; }
+      .layer-title { fill: #16c79a; font-family: 'Inter', 'Segoe UI', sans-serif; font-size: 24px; font-weight: 700; }
+      .layer-subtitle { fill: #a8dadc; font-family: 'Inter', 'Segoe UI', sans-serif; font-size: 14px; font-weight: 400; }
+      .layer-detail { fill: #8b9da9; font-family: 'Inter', 'Segoe UI', sans-serif; font-size: 12px; }
+      .app-title { fill: #e94560; font-family: 'Inter', 'Segoe UI', sans-serif; font-size: 16px; font-weight: 600; }
+      .app-subtitle { fill: #a8dadc; font-family: 'Inter', 'Segoe UI', sans-serif; font-size: 11px; }
+      .connector { stroke: #16c79a; stroke-width: 2; fill: none; marker-end: url(#arrowhead); }
+      .connector-omega { stroke: #00d9ff; stroke-width: 2; fill: none; marker-end: url(#arrowhead-cyan); }
+    </style>
+    <marker id="arrowhead" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto">
+      <polygon points="0 0, 10 3, 0 6" fill="#16c79a" />
+    </marker>
+    <marker id="arrowhead-cyan" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto">
+      <polygon points="0 0, 10 3, 0 6" fill="#00d9ff" />
+    </marker>
+  </defs>
+  
+  <!-- Background -->
+  <rect width="800" height="600" fill="#0a0a0f"/>
+  
+  <!-- Keon Layer -->
+  <rect class="keon-layer" x="100" y="40" width="600" height="120" rx="8"/>
+  <text class="layer-title" x="400" y="75" text-anchor="middle">Keon Substrate</text>
+  <text class="layer-subtitle" x="400" y="100" text-anchor="middle">Governance Primitives</text>
+  <text class="layer-detail" x="150" y="125" text-anchor="start">• Artifact Identity</text>
+  <text class="layer-detail" x="350" y="125" text-anchor="start">• JCS Canonicalization</text>
+  <text class="layer-detail" x="150" y="145" text-anchor="start">• Ledgered Transitions</text>
+  <text class="layer-detail" x="350" y="145" text-anchor="start">• Fail-Closed Validation</text>
+  
+  <!-- Connector: Keon to OMEGA -->
+  <path class="connector" d="M 400 160 L 400 200"/>
+  
+  <!-- OMEGA Layer -->
+  <rect class="omega-layer" x="100" y="200" width="600" height="140" rx="8"/>
+  <text class="layer-title" x="400" y="235" text-anchor="middle" fill="#00d9ff">OMEGA</text>
+  <text class="layer-subtitle" x="400" y="260" text-anchor="middle">Governed Execution</text>
+  <text class="layer-detail" x="150" y="285" text-anchor="start">• Workflow Registration</text>
+  <text class="layer-detail" x="400" y="285" text-anchor="start">• SDK Parity</text>
+  <text class="layer-detail" x="150" y="305" text-anchor="start">• Resume Input Governance</text>
+  <text class="layer-detail" x="400" y="305" text-anchor="start">• Immutable Run Ledger</text>
+  <text class="layer-detail" x="150" y="325" text-anchor="start">• Cryptographic Binding</text>
+  <text class="layer-detail" x="400" y="325" text-anchor="start">• Tenant Isolation</text>
+  
+  <!-- Connectors: OMEGA to Applications -->
+  <path class="connector-omega" d="M 250 340 L 200 400"/>
+  <path class="connector-omega" d="M 400 340 L 400 400"/>
+  <path class="connector-omega" d="M 550 340 L 600 400"/>
+  
+  <!-- MarketOps -->
+  <rect class="app-box" x="80" y="400" width="200" height="140" rx="6"/>
+  <text class="app-title" x="180" y="430" text-anchor="middle">MarketOps</text>
+  <text class="app-subtitle" x="180" y="450" text-anchor="middle">Enterprise AI</text>
+  <text class="layer-detail" x="100" y="475" text-anchor="start">• Workflow Integrity</text>
+  <text class="layer-detail" x="100" y="495" text-anchor="start">• Fail-Closed Enforcement</text>
+  <text class="layer-detail" x="100" y="515" text-anchor="start">• Cryptographic Receipts</text>
+  
+  <!-- ForgePilot -->
+  <rect class="app-box" x="300" y="400" width="200" height="140" rx="6"/>
+  <text class="app-title" x="400" y="430" text-anchor="middle">ForgePilot</text>
+  <text class="app-subtitle" x="400" y="450" text-anchor="middle">Strategic AI</text>
+  <text class="layer-detail" x="320" y="475" text-anchor="start">• Artifact-Based Workflows</text>
+  <text class="layer-detail" x="320" y="495" text-anchor="start">• Governed Clarification</text>
+  <text class="layer-detail" x="320" y="515" text-anchor="start">• SDK-Only Execution</text>
+  
+  <!-- SilentApply -->
+  <rect class="app-box" x="520" y="400" width="200" height="140" rx="6"/>
+  <text class="app-title" x="620" y="430" text-anchor="middle">SilentApply</text>
+  <text class="app-subtitle" x="620" y="450" text-anchor="middle">Consumer AI</text>
+  <text class="layer-detail" x="540" y="475" text-anchor="start">• Artifact Registration</text>
+  <text class="layer-detail" x="540" y="495" text-anchor="start">• Tenant-Bound Correlation</text>
+  <text class="layer-detail" x="540" y="515" text-anchor="start">• Substrate Portability</text>
+  
+  <!-- Footer -->
+  <text class="layer-detail" x="400" y="575" text-anchor="middle" fill="#16c79a">Governed by Keon • Executed by OMEGA • Proven Across Domains</text>
+</svg>
+

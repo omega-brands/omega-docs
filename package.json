@@ -1,0 +1,17 @@
+{
+  "name": "omega-docs",
+  "version": "1.0.0",
+  "description": "OMEGA Documentation and Whitepapers",
+  "private": true,
+  "scripts": {
+    "generate:pdfs": "node scripts/generate-whitepapers-pdf.js"
+  },
+  "devDependencies": {
+    "puppeteer": "^22.0.0",
+    "marked": "^12.0.0"
+  },
+  "engines": {
+    "node": ">=18.0.0"
+  }
+}
+
