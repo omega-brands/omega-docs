@@ -2,6 +2,11 @@
 
 > **OMEGA (Orchestrated Multi-Expert Governed Agents)** is a governed execution platform for coordinating generative, deterministic, and policy-driven agents with built-in proof, privacy, and failure semantics.
 
+## Whitepaper
+
+- **OMEGA Governed Execution Whitepaper (Markdown):** [whitepapers/omega-governed-execution.md](whitepapers/omega-governed-execution.md)
+- **OMEGA Governed Execution Whitepaper (PDF):** [assets/whitepapers/omega-governed-execution.pdf](assets/whitepapers/omega-governed-execution.pdf)
+
 ---
 
 ## What OMEGA Is
